@@ -14,14 +14,14 @@ $count = count($registrants);
 
 $insertcount = 0;
 $insertquery =
-  "insert into `" + DB_TABLE + "` (`Gamertag`, `Pass_type`, `First_name`, `Last_name`, `Email`, `Contact_number`, `State`,
+  "insert into `" . DB_TABLE . "` (`Gamertag`, `Pass_type`, `First_name`, `Last_name`, `Email`, `Contact_number`, `State`,
                                     `SF`, `TK`, `MK`, `A1`, `A2`,
                                     `Payment_ID`, `Payment_status`, `Registration_date`) values ";
 
 $updatequery = "";
 
 $today = getdate();
-$d = $todayh['mday'] + " " + $todayh['mon'] + " " + $todayh['year'] + " " +  $todayh['hours'] + ":" +  $todayh['minutes'];
+$d = $todayh['mday'] . " " . $todayh['mon'] . " " . $todayh['year'] . " " .  $todayh['hours'] . ":" . $todayh['minutes'];
 
 for ($i=0; $i < $count; $i++) {
 
@@ -64,27 +64,27 @@ for ($i=0; $i < $count; $i++) {
     $status = "-Pending-Add-";
 
     if ($registrants[$i]->sf) {
-      $updatequery .= "update `" + DB_TABLE + "` set `SF` = true where `Gamertag` = '$gamertag'; ";
+      $updatequery .= "update `" . DB_TABLE . "` set `SF` = true where `Gamertag` = '$gamertag'; ";
       $status .= "SF";
     }
      if ($registrants[$i]->tk) {
-      $updatequery .= "update `" + DB_TABLE + "` set `TK` = true where `Gamertag` = '$gamertag'; ";
+      $updatequery .= "update `" . DB_TABLE . "` set `TK` = true where `Gamertag` = '$gamertag'; ";
       $status .= "TK";
     }
      if ($registrants[$i]->mk) {
-      $updatequery .= "update `" + DB_TABLE + "` set `MK` = true where `Gamertag` = '$gamertag'; ";
+      $updatequery .= "update `" . DB_TABLE . "` set `MK` = true where `Gamertag` = '$gamertag'; ";
       $status .= "MK";
     }
      if ($registrants[$i]->a1) {
-      $updatequery .= "update `" + DB_TABLE + "` set `A1` = true where `Gamertag` = '$gamertag'; ";
+      $updatequery .= "update `" . DB_TABLE . "` set `A1` = true where `Gamertag` = '$gamertag'; ";
       $status .= "A1";
     }
      if ($registrants[$i]->a2) {
-      $updatequery .= "update `" + DB_TABLE + "` set `A2` = true where `Gamertag` = '$gamertag'; ";
+      $updatequery .= "update `" . DB_TABLE . "` set `A2` = true where `Gamertag` = '$gamertag'; ";
       $status .= "A2";
     }
 
-    $updatequery .= "update `" + DB_TABLE + "` set `Payment_status` = CONCAT(`Payment_status`, '$status'), `Payment_ID` = '$paymentId' where `Gamertag` = '$gamertag'; ";
+    $updatequery .= "update `" . DB_TABLE . "` set `Payment_status` = CONCAT(`Payment_status`, '$status'), `Payment_ID` = '$paymentId' where `Gamertag` = '$gamertag'; ";
   }
 
 }

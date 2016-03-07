@@ -231,7 +231,7 @@ function RegoController($scope, $http, $anchorScroll, $window) {
     that.scope.closeMkxDialog = function (isAgeOk) {
 
         if (that.currentRegistrantForAgeCheck) {
-            that.currentRegistrantForAgeCheck.mkx = isAgeOk;
+            that.currentRegistrantForAgeCheck.mk = isAgeOk;
         }
 
         $('#mkxDialog').foundation('reveal', 'close');

@@ -7,7 +7,7 @@ $result = null;
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-$query = "select * from `" + DB_TABLE + "`
+$query = "select * from `" . DB_TABLE . "`
           where `Gamertag` = '$gamertag'
           and `Pass_type` = 'Competitor'
           and `Payment_status` = 'Paid'; ";

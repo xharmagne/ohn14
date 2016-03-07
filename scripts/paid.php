@@ -10,16 +10,16 @@ $status = $data->status;
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
 $today = getdate();
-$d = $todayh['mday'] + " " + $todayh['mon'] + " " + $todayh['year'] + " " +  $todayh['hours'] + ":" +  $todayh['minutes'];
+$d = $todayh['mday'] . " " . $todayh['mon'] . " " . $todayh['year'] . " " .  $todayh['hours'] . ":" . $todayh['minutes'];
 
-$query = "update `" + DB_TABLE + "` set `Payment_status` = '$status', `Payer_ID` = '$payerId', `Payment_date` = '$d' where `Payment_ID` = '$paymentId'; ";
+$query = "update `" . DB_TABLE . "` set `Payment_status` = '$status', `Payer_ID` = '$payerId', `Payment_date` = '$d' where `Payment_ID` = '$paymentId'; ";
 
 $result = $query;
 
 if ($mysqli->multi_query($query)) {
   $result .= $mysqli->affected_rows;
 
-  $updatedRegistrantsQuery = "select * from `" + DB_TABLE + "`
+  $updatedRegistrantsQuery = "select * from `" . DB_TABLE . "`
                               where `Payment_ID` = '$paymentId'
                               and `Payment_status` = 'Paid'; ";
 

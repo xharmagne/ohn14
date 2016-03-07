@@ -7,7 +7,7 @@ $gamertag = $data->gamertag;
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-  $registrantsQuery = "select * from `" + DB_TABLE + "`
+  $registrantsQuery = "select * from `" . DB_TABLE . "`
                               where `Gamertag` = '$gamertag'
                               and `Payment_status` = 'Paid'; ";
 
