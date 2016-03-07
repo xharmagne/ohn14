@@ -1,0 +1,513 @@
+
+$font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$body-font-family: $font-family-sans-serif;
+
+$button-border-width: 2px;
+
+//// Colors ///////////////////////////////////////
+
+ $white       : #FFFFFF;
+ $ghost       : #FAFAFA;
+ $snow        : #F9F9F9;
+
+$ozhadou-blue: #1B75BA;
+$ozhadou-teal: #38ADCE;
+$ozhadou-dark-teal: #1c94c4;
+$ozhadou-light-grey: #a6a8ab;
+$ozhadou-dark-grey: #414142;
+
+$primary-color: $ozhadou-blue;
+$secondary-color: $ozhadou-light-grey;
+$alert-color: #c72a0e;
+
+
+@import
+     "foundation/components/buttons";
+
+
+//// Media Queries ///////////////////////////////////////
+
+$small-range: (0em, 40em);
+$medium-range: (40.063em, 64em);
+$large-range: (64.063em, 90em);
+$xlarge-range: (90.063em, 120em);
+$xxlarge-range: (120.063em, 99999999em);
+
+$screen: "only screen";
+
+$landscape: "#{$screen} and (orientation: landscape)";
+$portrait: "#{$screen} and (orientation: portrait)";
+
+$small-up: $screen;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})";
+
+$medium-up: "#{$screen} and (min-width:#{lower-bound($medium-range)})";
+
+
+
+
+
+//// General ///////////////////////////////////////
+$content-max-width: 55rem;
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+.app {
+    height: 100%;
+    &.noscroll {
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+}
+
+h3, .subheader {
+    padding-top: 0;
+}
+
+.row.full-width,
+.full-width {
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.row.content-width,
+.content-width {
+    max-width: $content-max-width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo {
+    margin: 1rem 0 0.5rem 0;
+}
+
+.form-section {
+    padding: 1.3rem 0 1rem 0;
+}
+
+
+//// Sections ///////////////////////////////////////
+/*.header-row {
+    background-color: $ozhadou-teal;
+    padding: 0.5rem 0 0.5rem 0;
+
+    h2 {
+        color: white;
+    }
+}
+
+.name-section {
+    background-color: $ozhadou-dark-grey;
+    padding: 0.25rem 0 0.25rem 0; 
+    border-top: 2px solid white;
+    border-bottom: 1px solid $ozhadou-light-grey;
+
+    h3 {
+        cursor: pointer;
+        color: $white;
+        float: left;
+    }
+}
+
+.type-section {
+    padding: 1.75rem 0 1rem 0;
+    background-color: $ozhadou-dark-grey;
+}*/
+
+
+.header-row {
+    background-color: $white;
+    padding: 0.5rem 0 0.5rem 0;
+
+    h2 {
+        color: $ozhadou-teal;
+    }
+}
+
+.error-section {
+    padding: 0;
+    span.error {
+        margin-bottom: 0;
+    }
+}
+
+.name-section {
+    background-color: $ozhadou-dark-teal;
+    padding: 0.25rem 0 0.25rem 0; 
+    border-top: 2px solid white;
+    border-bottom: 1px solid scale-color($ozhadou-dark-teal, $lightness:+30%);
+
+    h3 {
+        cursor: pointer;
+        color: $white;
+        float: left;
+    }
+}
+
+.type-section {
+    padding: 1.75rem 0 1rem 0;
+    background-color: $white;
+    border-bottom: solid 1px #ccc;
+}
+
+.player-section {
+    background-color: $white;
+    border-bottom: solid 1px #ccc;
+}
+
+.games-section {
+    background-color: $white;
+    margin-bottom: 0.5rem;
+    border-bottom: solid 1px #ccc;
+}
+
+.buttons-section {
+    padding-top: 2rem;
+
+    .button {
+        width: 100%;
+    }
+}
+
+.totals-section {
+    padding-bottom: 0;
+    .total-label {
+        font-size: 1.25rem;
+    }
+    .total-price {
+        font-size: 2rem;
+    }
+}
+
+span.step-number {
+    font-size: 2rem;
+    position:relative;
+    top: 0.1rem;
+    margin-right: 0.3rem;
+    color: #cdcdcd;
+}
+
+@media #{$medium-up} {
+
+    .buttons-section {
+        .button {
+            width: auto;
+        }
+    }
+
+}
+
+
+//// Form ///////////////////////////////////////
+
+form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.ohn-form {
+    input[type="text"], input[type="password"], input[type="date"], input[type="datetime"], input[type="datetime-local"], input[type="month"], input[type="week"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="time"], input[type="url"], input[type="color"], textarea, select {
+        margin-bottom: 0;
+    }
+
+    .form-field {
+        margin-bottom: 0.5rem;
+    }
+
+    input.ng-invalid.ng-touched {
+        border-color: $alert-color;
+        border-width: 2px;
+    }
+
+    input.ng-valid.ng-touched {
+        border-color: #999999;
+        border-width: 1px;
+    }
+
+    .type-section span.error {
+        max-width: 33.5rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @media #{$medium-up} {
+
+        .type-section span.error {
+            margin-left: 0.5rem;
+            margin-right: 0.5rem;
+        }
+
+    }
+}
+
+
+
+//// Buttons ///////////////////////////////////////
+
+// Press effect
+input[type="radio"]:active + label.button,
+input[type="checkbox"]:active + label.button {
+    position: relative;
+    top: 2px;
+    left: 2px;
+}
+
+.game-button-container {
+    text-align: center;
+}
+
+.game-button {
+    @include button-style($bg: #f6f6f6, $radius:false, $disabled:false, $bg-hover:rgba(141,186,220,0.3), $border-color: scale-color($ozhadou-light-grey,$lightness:50%));
+    padding: 0;
+    padding-bottom: 0.4rem;
+    color: $ozhadou-dark-teal;
+
+    &.active {
+        @include button-style($bg: $ozhadou-blue, $radius:false, $disabled:false, $bg-hover:null, $border-color: $ozhadou-teal);
+    }
+
+    &:active {
+        position: relative;
+        top: 3px;
+        left: 3px;
+    }
+
+    &:hover {
+        color: $ozhadou-dark-teal;
+    }
+
+    img {
+        pointer-events: none; // This is to allow the click event on an image to toggle the checkbox (IE11)
+    }
+}
+
+.type-button {
+    @include button-style($bg: $ozhadou-blue, $radius:false, $disabled:false, $bg-hover:scale-color($ozhadou-teal,$lightness:-10%), $border-color:$ozhadou-teal);
+    padding: 1rem 0;
+    color: $white;
+    margin: 0.5rem 1.45% 1rem 1.45%;
+    width: 30%;
+    min-width: 12rem;
+
+    &.active {
+        @include button-style($bg: $ozhadou-teal, $radius:false, $disabled:false, $bg-hover:null, $border-color: $ozhadou-teal);
+    }
+
+    &:active {
+        position: relative;
+        top: 3px;
+        left: 3px;
+    }
+}
+
+
+input[type="radio"] + label.game-button,
+input[type="checkbox"] + label.game-button {
+    width: 100%;
+    margin: 0.5rem 1rem 0rem 0;
+    
+    img {
+        opacity: 0.9;
+        margin-bottom: 0.5rem;
+    }
+}
+
+input[disabled] + label.game-button {
+    opacity: 0.5;
+    @include button-style($bg: #f6f6f6, $radius:false, $disabled:false, $bg-hover:#f6f6f6, $border-color: scale-color($ozhadou-light-grey,$lightness:50%));
+}
+
+
+.button-text {
+
+    display: block;
+
+    &.title {
+        font-size: 1.3rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    &.subtitle {
+        font-size: 0.8rem;
+        font-weight: normal;
+        margin-bottom: 0.2rem;
+    }
+
+    &.price {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+    vertical-align: top; 
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+    float: left;
+    cursor: pointer;
+
+    &.expand {
+        background-image: url('../img/arrow-down.png');
+    }
+
+    &.collapse {
+        background-image: url('../img/arrow-up.png');
+    }
+
+    &.delete {
+        background-image: url('../img/delete.png');
+        float: right;
+    }
+    
+    &.edit {
+        background-image: url('../img/edit.png');
+    }
+
+}
+
+
+//// Tables ///////////////////////////////////////
+
+table {
+    border-spacing: 0;
+}
+
+table tr.totals td {
+    text-align: right;
+}
+
+table tr td.numeric {
+    text-align: right;
+}
+
+table tr.registrant-name td {
+
+    .gamertag {
+        font-size: 1.25rem;
+    }
+
+    .email {
+        font-size: 0.8rem;
+    }
+}
+
+table tr.sub-total td {
+    border-bottom: solid 2px $ozhadou-teal;
+    font-weight: bold;
+    background-color: scale-color($ozhadou-teal, $lightness:+90%);
+}
+
+table tr.grand-total td {
+    font-weight: bold;
+    color: $white;
+    background-color: $ozhadou-teal;
+}
+
+
+//// Animations ///////////////////////////////////////
+
+.slide-from-right {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-color: $white;
+}
+
+.slide-from-left.ng-hide-remove {
+    -webkit-animation: slideInLeft 0.5s;
+    animation: slideInLeft 0.5s;
+}
+ 
+.slide-from-left.ng-hide-add {
+    -webkit-animation: slideOutLeft 0.5s;
+    animation: slideOutLeft 0.5s;
+}
+
+.slide-from-right.ng-hide-remove {
+    -webkit-animation: slideInRight 0.5s;
+    animation: slideInRight 0.5s;
+}
+ 
+.slide-from-right.ng-hide-add {
+    -webkit-animation: slideOutRight 0.5s;
+    animation: slideOutRight 0.5s;
+}
+
+.slide-from-top.ng-hide-remove {
+    animation: fadeInDown 0.5s;
+    -webkit-animation: fadeInDown 0.5s;
+    -moz-animation: fadeInDown 0.5s;
+
+}
+ 
+.slide-from-top.ng-hide-add {
+    animation: fadeOutUp 0.5s;
+    -webkit-animation: fadeOutUp 0.5s;
+    -moz-animation: fadeOutUp 0.5s;
+}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {
+    -webkit-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    -webkit-transition-delay: 0.65s; 
+    transition-delay: 0.65s;
+}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {
+  opacity:0;
+  max-height:0;
+}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {
+  opacity:1;
+  max-height:1048px;
+}
+
+//// Loading ///////////////////////////////////////
+
+.loading {
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.75);
+    position: absolute;
+    top: 0;
+
+    .spinning-dots-spinner {
+	    width: 40px;
+	    height: 40px;
+        margin: 12.5rem auto 0 auto;
+    }
+
+    .container1 > div, .container2 > div, .container3 > div {
+        width: 12px;
+        height: 12px;
+        background-color: $ozhadou-dark-teal;
+    }
+
+    .loading-text {
+        color: $ozhadou-dark-teal;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 1rem;
+        text-align: center;
+    }
+}
+
+
