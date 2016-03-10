@@ -9,9 +9,7 @@ $status = $data->status;
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-$today = getdate();
-$d = $todayh['mday'] . " " . $todayh['mon'] . " " . $todayh['year'] . " " .  $todayh['hours'] . ":" . $todayh['minutes'];
-
+$d = date(DATE_RFC2822);
 $query = "update `" . DB_TABLE . "` set `Payment_status` = '$status', `Payer_ID` = '$payerId', `Payment_date` = '$d' where `Payment_ID` = '$paymentId'; ";
 
 $result = $query;

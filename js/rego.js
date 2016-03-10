@@ -294,11 +294,11 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                           "subtotal": that.scope.total.toString()
                       }
                   },
-                  "description": "OHN 13 Registration",
+                  "description": "OHN 14 Registration",
                   "item_list": {
                       "items": allItems
                   },
-                  "soft_descriptor": "OHN13 Registration"
+                  "soft_descriptor": "OHN14 Registration"
               }
             ]
         };

@@ -1,0 +1,27 @@
+{
+  "name": "ohn14",
+  "version": "1.0.0",
+  "description": "OzHadou Nationals 14",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.2",
+    "gulp-sass": "^2.1.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xharmagne/ohn14.git"
+  },
+  "author": "Xharmagne C",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xharmagne/ohn14/issues"
+  },
+  "homepage": "https://github.com/xharmagne/ohn14"
+}

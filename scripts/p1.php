@@ -5,7 +5,7 @@ $data = json_decode(file_get_contents("php://input"));
 $result = "";
 
 $postData[] = "USER=".PP_USERNAME;
-$postData[] = "PWD=".PP_PASSWORD;            
+$postData[] = "PWD=".PP_PASSWORD;
 $postData[] = "SIGNATURE=".PP_SIGNATURE;
 $postData[] = "METHOD=SetExpressCheckout";
 $postData[] = "VERSION=123";
@@ -13,9 +13,9 @@ $postData[] = "PAYMENTREQUEST_0_PAYMENTACTION=SALE";
 $postData[] = "PAYMENTREQUEST_0_AMT=".$data->transactions[0]->amount->total;
 $postData[] = "PAYMENTREQUEST_0_ITEMAMT=".$data->transactions[0]->amount->total;
 $postData[] = "PAYMENTREQUEST_0_CURRENCYCODE=AUD";
-$postData[] = "RETURNURL=http://dev.ozhadou.net/confirmed.html";
-$postData[] = "CANCELURL=http://dev.ozhadou.net/cancelled.html";
-          
+$postData[] = "RETURNURL=".SUCCESS_URL;
+$postData[] = "CANCELURL=".CANCEL_URL;
+
 $items = $data->transactions[0]->item_list->items;
 $count = count($items);
 
@@ -28,13 +28,13 @@ for ($i=0; $i < $count; $i++) {
 $postData_str = implode('&',$postData);
 error_log("SetExpressCheckout:".$postData_str);
 
-$ch = curl_init(PP_ENDPOINT);                                                                      
-curl_setopt($ch, CURLOPT_POST, true);      
+$ch = curl_init(PP_ENDPOINT);
+curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_HEADER, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_USERPWD, PP_CLIENTID.":".PP_SECRET);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postData_str);                                                                  
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postData_str);
 
 $setExpressCheckoutResult = curl_exec($ch);
 
@@ -46,7 +46,7 @@ else {
     error_log("SetExpressCheckout:".$setExpressCheckoutResult);
     parse_str($setExpressCheckoutResult, $result_array);
     $result = urldecode($result_array['TOKEN']);
-    
+
     error_log("SetExpressCheckout:".$result);
     $_SESSION["access_token"] = $result;
 }

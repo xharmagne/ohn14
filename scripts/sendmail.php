@@ -5,7 +5,7 @@ require './PHPMailerAutoload.php';
 //SMTP needs accurate times, and the PHP time zone MUST be set
 //This should be done in your php.ini, but this is how to do it if you don't have access to that
 date_default_timezone_set('Etc/UTC');
-  
+
 function send_mail($toName, $toAddress, $subject, $body, $plainBody) {
 
   //Create a new PHPMailer instance
@@ -38,9 +38,9 @@ function send_mail($toName, $toAddress, $subject, $body, $plainBody) {
   $mail->addAddress($toAddress, $toName);
 
   //Send copy to Ozhadou
-  $mail->addBCC('ohn@ozhadou.net', 'Ozhadou team');
+  //$mail->addBCC('ohn@ozhadou.net', 'Ozhadou team');
 
-  $mail->isHTML(true); 
+  $mail->isHTML(true);
 
   //Mail content
   $mail->Subject = $subject." [TEST]";
@@ -54,9 +54,9 @@ function send_mail($toName, $toAddress, $subject, $body, $plainBody) {
   } else {
       echo "Message sent!";
   }
-  
+
   return $success;
-  
+
 }
 
 ?>

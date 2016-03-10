@@ -20,8 +20,7 @@ $insertquery =
 
 $updatequery = "";
 
-$today = getdate();
-$d = $todayh['mday'] . " " . $todayh['mon'] . " " . $todayh['year'] . " " .  $todayh['hours'] . ":" . $todayh['minutes'];
+$d = date(DATE_RFC2822);
 
 for ($i=0; $i < $count; $i++) {
 
