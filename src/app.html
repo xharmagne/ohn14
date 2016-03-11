@@ -1,0 +1,28 @@
+<template>
+  <h1 class="text-center">${message}</h1>
+
+  <table align="center">
+    <thead>
+        <tr>
+            <td>Gamertag</td>
+            <td>Region</td>
+            <td>Pass type</td>
+            <td>Games</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="registrant-name" repeat.for="registrant of registrants">
+            <td><div style="font-size: 1.1rem; padding: 0.25rem 0">${registrant.gamertag}</div></td>
+            <td>${registrant.region}</td>
+            <td>${registrant.passType}</td>
+            <td>
+              <span if.bind="registrant.games.sfRegistered">SFV </span>
+              <span if.bind="registrant.games.tkRegistered">T7 </span>
+              <span if.bind="registrant.games.mkRegistered">MKX </span>
+              <span if.bind="registrant.games.a1Registered">VF5FS </span>
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+</template>
