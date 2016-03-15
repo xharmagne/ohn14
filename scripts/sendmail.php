@@ -32,7 +32,7 @@ function send_mail($toName, $toAddress, $subject, $body, $plainBody) {
   $mail->Password = SMTP_PASSWORD;
 
   //Set who the message is to be sent from
-  $mail->setFrom('ohn@ozhadou.net', 'OHN 13 Registration');
+  $mail->setFrom('ohn@ozhadou.net', 'OHN14 Registration');
 
   //Set who the message is to be sent to
   $mail->addAddress($toAddress, $toName);

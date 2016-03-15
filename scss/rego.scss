@@ -85,6 +85,10 @@ h3, .subheader {
     margin: 1rem 0 0.5rem 0;
 }
 
+.ohn-logo {
+  max-height: 5.5rem;
+}
+
 .form-section {
     padding: 1.3rem 0 1rem 0;
 }
@@ -102,7 +106,7 @@ h3, .subheader {
 
 .name-section {
     background-color: $ozhadou-dark-grey;
-    padding: 0.25rem 0 0.25rem 0; 
+    padding: 0.25rem 0 0.25rem 0;
     border-top: 2px solid white;
     border-bottom: 1px solid $ozhadou-light-grey;
 
@@ -137,7 +141,7 @@ h3, .subheader {
 
 .name-section {
     background-color: $ozhadou-dark-teal;
-    padding: 0.25rem 0 0.25rem 0; 
+    padding: 0.25rem 0 0.25rem 0;
     border-top: 2px solid white;
     border-bottom: 1px solid scale-color($ozhadou-dark-teal, $lightness:+30%);
 
@@ -288,11 +292,12 @@ input[type="checkbox"]:active + label.button {
 
 .type-button {
     @include button-style($bg: $ozhadou-blue, $radius:false, $disabled:false, $bg-hover:scale-color($ozhadou-teal,$lightness:-10%), $border-color:$ozhadou-teal);
-    padding: 1rem 0;
+    padding: 0.7rem 0;
     color: $white;
     margin: 0.5rem 1.45% 1rem 1.45%;
     width: 30%;
     min-width: 12rem;
+    border-radius: 1rem;
 
     &.active {
         @include button-style($bg: $ozhadou-teal, $radius:false, $disabled:false, $bg-hover:null, $border-color: $ozhadou-teal);
@@ -310,10 +315,13 @@ input[type="radio"] + label.game-button,
 input[type="checkbox"] + label.game-button {
     width: 100%;
     margin: 0.5rem 1rem 0rem 0;
-    
+    border-radius: 1rem;
+
     img {
         opacity: 0.9;
         margin-bottom: 0.5rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
     }
 }
 
@@ -347,7 +355,7 @@ input[disabled] + label.game-button {
 
 input[type="checkbox"] + label,
 input[type="radio"] + label {
-    vertical-align: top; 
+    vertical-align: top;
 }
 
 .icon {
@@ -368,7 +376,7 @@ input[type="radio"] + label {
         background-image: url('../img/delete.png');
         float: right;
     }
-    
+
     &.edit {
         background-image: url('../img/edit.png');
     }
@@ -380,6 +388,10 @@ input[type="radio"] + label {
 
 table {
     border-spacing: 0;
+}
+
+table thead tr td {
+  background-color: scale-color($ozhadou-teal, $lightness:+90%);
 }
 
 table tr.totals td {
@@ -427,7 +439,7 @@ table tr.grand-total td {
     -webkit-animation: slideInLeft 0.5s;
     animation: slideInLeft 0.5s;
 }
- 
+
 .slide-from-left.ng-hide-add {
     -webkit-animation: slideOutLeft 0.5s;
     animation: slideOutLeft 0.5s;
@@ -437,7 +449,7 @@ table tr.grand-total td {
     -webkit-animation: slideInRight 0.5s;
     animation: slideInRight 0.5s;
 }
- 
+
 .slide-from-right.ng-hide-add {
     -webkit-animation: slideOutRight 0.5s;
     animation: slideOutRight 0.5s;
@@ -449,7 +461,7 @@ table tr.grand-total td {
     -moz-animation: fadeInDown 0.5s;
 
 }
- 
+
 .slide-from-top.ng-hide-add {
     animation: fadeOutUp 0.5s;
     -webkit-animation: fadeOutUp 0.5s;
@@ -461,7 +473,7 @@ table tr.grand-total td {
 .animate-repeat.ng-leave {
     -webkit-transition:all linear 0.5s;
     transition:all linear 0.5s;
-    -webkit-transition-delay: 0.65s; 
+    -webkit-transition-delay: 0.65s;
     transition-delay: 0.65s;
 }
 
@@ -509,5 +521,3 @@ table tr.grand-total td {
         text-align: center;
     }
 }
-
-

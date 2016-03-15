@@ -294,7 +294,7 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                           "subtotal": that.scope.total.toString()
                       }
                   },
-                  "description": "OHN 14 Registration",
+                  "description": "OHN14 Registration",
                   "item_list": {
                       "items": allItems
                   },

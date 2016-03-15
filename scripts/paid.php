@@ -90,7 +90,7 @@ if ($mysqli->multi_query($query)) {
                               Show us a copy of this email (printed or on your smartphone)\n
                               Show us photo identification if requested", $gamertag, $pass, $games);
 
-        send_mail($name, $email, "OHN 14 Registration Confirmed", $body, $plainBody);
+        send_mail($name, $email, "OHN14 Registration Confirmed", $body, $plainBody);
     }
 
   }

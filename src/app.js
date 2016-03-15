@@ -4,13 +4,13 @@ import 'fetch';
 
 @inject(HttpClient)
 export class App {
-  message = 'OHN 14 Registrants';
+  message = 'Registrants';
 
   constructor(http) {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('http://localhost:89/aurelia/scripts/');
+        .withBaseUrl('http://dev.ozhadou.net/scripts/');
     });
 
     this.http = http;

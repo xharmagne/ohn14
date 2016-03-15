@@ -80,7 +80,7 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                               Show us a copy of this email (printed or on your smartphone)\n
                               Show us photo identification if requested", $gamertag, $pass, $games);
 
-        send_mail($name, $email, "OHN 14 Registration Confirmed", $body, $plainBody);
+        send_mail($name, $email, "OHN14 Registration Confirmed", $body, $plainBody);
     }
 
   }

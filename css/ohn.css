@@ -8,17 +8,17 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-    font-family: 'Cabin', sans-serif;  
+    font-family: 'Cabin', sans-serif;
     text-transform: uppercase;
 }
 
 h3 {
     text-align: center;
-    color: #5b7092   
+    color: #5b7092
 }
 
 .subheader {
-    color: #8f9296;   
+    color: #8f9296;
 }
 
 a {
@@ -32,11 +32,11 @@ a:hover {
 #site-title {
     text-align: center;
     border-bottom: 1px solid #eee;
-    padding: 1.25rem 0;
+    padding: 0.75rem 0;
 }
 
 #site-title h1 {
-    margin: 0;   
+    margin: 0;
 }
 
 #menu {
@@ -56,7 +56,7 @@ a:hover {
 }
 
 /*.type-section {
-    background-color: #fff !important;  
+    background-color: #fff !important;
     padding: 1.75rem 0 0 !important;
 }*/
 
@@ -69,15 +69,15 @@ a:hover {
 }*/
 
 /*.button-text.title {
-    font-size: 1.25rem !important;   
+    font-size: 1.25rem !important;
 }
 
 .button-text.price {
-    font-size: 1rem !important;   
+    font-size: 1rem !important;
 }
 
 .type-button {
-    padding: 1rem 0 !important;   
+    padding: 1rem 0 !important;
 }*/
 
 /*.type-button:hover, .type-button:focus {
@@ -85,11 +85,62 @@ a:hover {
 }*/
 
 .games-section {
- background-color: #fff !important;   
+ background-color: #fff !important;
 }
 
 .content-image {
     float: right;
+}
+
+.ohn-logo {
+  max-height: 5.5rem;
+}
+
+
+/********* Main info ***********/
+.main-info {
+  background-image: url(../img/swirl.svg);
+  background-size: 2000px 450px;
+  height: 450px;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-position-y: 0px;
+  position: relative;
+  top: -273px;
+  margin-bottom: -273px;
+}
+
+.main-info-content {
+  position: relative;
+  top: 273px;
+  padding-top: 2.4rem;
+}
+
+.main-info-content .date {
+    font-size: 1.8rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+    font-family: Cabin;
+    color: white;
+}
+
+.main-info-content .venue {
+    font-family: Raleway;
+    color: #d2f0ff;
+    font-size: 1.3rem;
+    line-height: 2.5rem;
+}
+
+@media only screen and (min-width:40.063em) {
+
+  .main-info-content .venue {
+      font-size: 1.45rem;
+  }
+
+  .main-info-content .date {
+      font-size: 2rem;
+  }
+
 }
 
 @media only screen and (max-width: 40em) {
@@ -98,9 +149,78 @@ a:hover {
         display: block;
         margin: 20px auto;
     }
-    
-    #menu a.button {        
+
+    #menu a.button {
         padding: 1rem;
     }
 }
 
+
+/********* Flex grids ***********/
+
+.info-container {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.info-item {
+	flex-basis: 50%;
+	padding: 1.1rem 0rem;
+	text-align: center;
+
+}
+
+.info-item ul {
+	margin: 0;
+}
+
+.info-item ul li {
+  list-style-type: none;
+}
+
+.info-item .info-name {
+	font-size: 1rem;
+	margin-bottom: 0;
+}
+
+	@media only screen and (min-width: 40em) {
+		.info-item {
+			flex-basis: 25%;
+		}
+    .info-item .info-name {
+      	font-size: 1.25rem;
+    }
+	}
+
+
+.info-circle {
+	background-color: #17639e;
+  color: white;
+  width: 75px;
+  height: 75px;
+  line-height: 75px;
+  border-radius: 75px;
+  font-size: 1.25rem;
+	margin-left: auto;
+	margin-right: auto;
+  text-align: center;
+
+	background-size: cover;
+	background-position: 50% 0%;
+
+}
+
+
+.info-circle {
+	margin-bottom: 0.5rem;
+}
+
+	@media only screen and (min-width: 40em) {
+		.info-circle {
+		  width: 100px;
+		  height: 100px;
+		  line-height: 100px;
+		  border-radius: 100px;
+		  font-size: 1.5rem;
+		}
+	}
