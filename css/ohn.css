@@ -15,6 +15,11 @@ h1, h2, h3, h4, h5 {
 h3 {
     text-align: center;
     color: #5b7092
+    padding-top: 1.75rem;
+}
+
+p {
+  margin-bottom: 0.5rem;
 }
 
 .subheader {
@@ -54,35 +59,6 @@ a:hover {
 #menu a.button:hover {
     color: #38ADCE;
 }
-
-/*.type-section {
-    background-color: #fff !important;
-    padding: 1.75rem 0 0 !important;
-}*/
-
-/*label.type-button {
-    background-color: #1B75BA !important;
-    border-color: #fff !important;
-    color: #fff !important;
-    margin: 1rem 1.45% !important;
-    width: 30% !important;
-}*/
-
-/*.button-text.title {
-    font-size: 1.25rem !important;
-}
-
-.button-text.price {
-    font-size: 1rem !important;
-}
-
-.type-button {
-    padding: 1rem 0 !important;
-}*/
-
-/*.type-button:hover, .type-button:focus {
-  background: #38ADCE !important;
-}*/
 
 .games-section {
  background-color: #fff !important;
@@ -162,11 +138,13 @@ a:hover {
 	display: flex;
 	flex-wrap: wrap;
   width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-item {
 	flex-basis: 50%;
-	padding: 1.1rem 0rem;
+	padding: 0.5rem 0rem;
 	text-align: center;
 
 }
@@ -188,6 +166,15 @@ a:hover {
 		.info-item {
 			flex-basis: 25%;
 		}
+
+    .info-container.max-4 .info-item {
+      flex-basis: 25%;
+    }
+
+    .info-container.max-3 .info-item {
+      flex-basis: 33%;
+    }
+
     .info-item .info-name {
       	font-size: 1.25rem;
     }
@@ -208,6 +195,12 @@ a:hover {
 
 	background-size: cover;
 	background-position: 50% 0%;
+
+}
+
+.info-circle.empty {
+	background-color: white;
+  border: dotted 8px #17639e;
 
 }
 
