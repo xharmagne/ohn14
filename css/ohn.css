@@ -161,6 +161,7 @@ a:hover {
 .info-container {
 	display: flex;
 	flex-wrap: wrap;
+  width: 100%;
 }
 
 .info-item {
