@@ -78,12 +78,11 @@ a:hover {
   background-image: url(../img/swirl.svg);
   background-size: 2000px 450px;
   height: 450px;
-  background-position-x: center;
   background-repeat: no-repeat;
-  background-position-y: 0px;
   position: relative;
   top: -273px;
   margin-bottom: -273px;
+  background-position: center top;
 }
 
 .main-info-content {
@@ -129,6 +128,16 @@ a:hover {
     #menu a.button {
         padding: 1rem;
     }
+}
+
+/********* Row highlights ***********/
+.highlight-row {
+  margin: 2rem 0;
+  padding: 1.5rem 0;
+}
+
+.highlight-row.highlight-1 {
+  background-color: #E3F0FA;
 }
 
 
