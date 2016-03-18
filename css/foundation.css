@@ -1142,9 +1142,9 @@ select {
     left: auto; } }
 button, .button {
   border-style: solid;
-  border-width: 0;
+  border-width: 2;
   cursor: pointer;
-  font-family: "Cabin", Roboto, Arial, sans-serif;
+  font-family: Raleway, Roboto, Arial, sans-serif;
   font-weight: normal;
   line-height: normal;
   margin: 0 0 1.25rem;
@@ -1160,22 +1160,22 @@ button, .button {
   padding-bottom: 1.0625rem;
   padding-left: 2rem;
   font-size: 1rem;
-  background-color: #ebf7fa;
-  border-color: #ebf7fa;
-  color: #1b75ba;
+  background-color: #1B75BA;
+  border-color: #165e95;
+  color: #fff;
   transition: background-color 300ms ease-out; }
   button:hover, button:focus, .button:hover, .button:focus {
-    background-color: #dcf3f9; }
+    background-color: #165e95; }
   button:hover, button:focus, .button:hover, .button:focus {
-    color: #1b75ba; }
+    color: #fff; }
   button.secondary, .button.secondary {
-    background-color: #e7e7e7;
-    border-color: #b9b9b9;
-    color: #333333; }
+    background-color: #a6a8ab;
+    border-color: #83868a;
+    color: #fff; }
     button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
-      background-color: #b9b9b9; }
+      background-color: #83868a; }
     button.secondary:hover, button.secondary:focus, .button.secondary:hover, .button.secondary:focus {
-      color: #333333; }
+      color: #fff; }
   button.success, .button.success {
     background-color: #43AC6A;
     border-color: #368a55;
@@ -3102,10 +3102,10 @@ meta.foundation-mq-topbar {
   .orbit-bullets {
     display: none; } }
 [data-magellan-expedition], [data-magellan-expedition-clone] {
-  background: #FFFFFF;
+  background: rgba(255,255,255,0.9);
   z-index: 50;
   min-width: 100%;
-  padding: 10px; }
+  padding: 0; }
   [data-magellan-expedition] .sub-nav, [data-magellan-expedition-clone] .sub-nav {
     margin-bottom: 0; }
     [data-magellan-expedition] .sub-nav dd, [data-magellan-expedition-clone] .sub-nav dd {

@@ -15,7 +15,7 @@ h1, h2, h3, h4, h5 {
 h3 {
     text-align: center;
     color: #5b7092;
-    padding-top: 1.75rem;
+    padding-top: 2rem;
 }
 
 p {
@@ -49,15 +49,24 @@ a:hover {
 }
 
 #menu a.button {
-    background: #fff;
+    background: transparent;
     color: #1B75BA;
     text-transform: uppercase;
     font-family: 'Cabin', sans-serif;
-    padding: 1.25rem 2rem;
+    padding: 0.5rem 1.3rem;
+    margin-bottom: 0;
+    z-index: 1;
+    border: none;
 }
 
 #menu a.button:hover {
     color: #38ADCE;
+}
+
+@media only screen and (min-width: 40em) {
+  #menu a.button {
+      padding: 0.5rem 2rem;
+  }
 }
 
 .games-section {
@@ -106,6 +115,21 @@ a:hover {
     line-height: 2.5rem;
 }
 
+.main-info-content .button {
+  background-color: #ebf7fa;
+  color: #1B75BA;
+  border-color: #bee9f4;
+  padding: 0.6rem 1.75rem 0.8rem 1.75rem;
+  font-size: 2rem;
+  font-family: Cabin, sans-serif;
+  text-transform: uppercase;
+  border-radius: 1rem;
+}
+
+.main-info-content .button:hover {
+  background-color: #dcf3f9;
+}
+
 @media only screen and (min-width:40.063em) {
 
   .main-info-content .venue {
@@ -125,14 +149,11 @@ a:hover {
         margin: 20px auto;
     }
 
-    #menu a.button {
-        padding: 1rem;
-    }
 }
 
 /********* Row highlights ***********/
 .highlight-row {
-  margin: 2rem 0;
+  margin-top: 2rem;
   padding: 1.5rem 0;
 }
 
