@@ -13,6 +13,7 @@
     <meta property="og:image" content="http://dev.ozhadou.net/img/ohn-logo.png" />
 
     <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="css/angular-spinkit.min.css">
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/ohn.css" />
     <link rel="stylesheet" href="css/rego.css" />
@@ -20,7 +21,51 @@
 
   </head>
 
-  <body aurelia-app>
+  <body aurelia-app="main">
+    <div class="splash">
+      <!-- TITLE -->
+      <div class="title-row full-width">
+          <div class="row content-width">
+              <div id="site-title" class="small-12 small-centered columns">
+                  <a name="home"></a>
+                  <h1><a href="index.html" target="_self"><img class="ohn-logo" src="img/ohn-logo.svg" alt="OHN14" /></a></h1>
+              </div>
+          </div>
+      </div>
+
+      <!-- HEADER -->
+      <div id="top" class="header-row full-width">
+          <div class="row content-width">
+              <div class="small-12 small-centered text-center columns">
+                  <h3 class="text-center">Registrants</h3>
+              </div>
+          </div>
+      </div>
+
+      <div class="loading">
+        <div class="spinning-dots-spinner">
+          <div class="spinner-container container1">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+          </div>
+          <div class="spinner-container container2">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+          </div>
+          <div class="spinner-container container3">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
