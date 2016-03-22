@@ -5,6 +5,35 @@ import 'fetch';
 @inject(HttpClient)
 export class App {
   message = 'Registrants';
+  filterGamertag = "";
+  filterRegion = "";
+  filterPassType = "";
+  filterGame = "";
+  showFilterOptions = false;
+
+  regions = [
+      {value: "", name: "All"},
+      {value: "NSW", name: "NSW"},
+      {value: "ACT", name: "ACT"},
+      {value: "QLD", name: "QLD"},
+      {value: "VIC", name: "VIC"},
+      {value: "WA", name: "WA"},
+      {value: "SA", name: "SA"},
+      {value: "NT", name: "NT"},
+      {value: "TAS", name: "TAS"}
+  ];
+  passTypes = [
+      {value: "", name: "All"},
+      {value: "Competitor", name: "Competitor"},
+      {value: "Spectator", name: "Spectator"}
+  ];
+  games = [
+      {value: "", name: "All"},
+      {value: "SF", name: "SFV"},
+      {value: "TK", name: "TK7"},
+      {value: "MK", name: "MKX"},
+      {value: "A1", name: "VF5FS"}
+  ];
 
   constructor(http) {
     http.configure(config => {

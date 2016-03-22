@@ -521,3 +521,26 @@ table tr.grand-total td {
         text-align: center;
     }
 }
+
+
+//// Registrants ///////////////////////////////////////
+
+.options-row {
+    margin-bottom: 1.5rem;
+}
+
+.options-container {
+    background-color: #eef0f3;
+    border-radius: 8px;
+    padding: 0.8rem 1.1rem 0.2rem 1.1rem;
+
+  label {
+      color: #0a0a0a;
+  }
+}
+
+tr.registrants-sum td {
+    font-style: italic;
+    background-color: #38ADCE;
+    color: white;
+}

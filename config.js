@@ -200,6 +200,9 @@ System.config({
     "app-build.js": [
       "app.html!github:systemjs/plugin-text@0.0.3.js",
       "app.js",
+      "filter-count.js",
+      "filter.js",
+      "list-count.js",
       "main.js"
     ],
     "aurelia.js": [
