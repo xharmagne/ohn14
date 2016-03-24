@@ -16,3 +16,6 @@ gulp.task('sass', function () {
       .pipe(minifyCSS())
       .pipe(gulp.dest('./css'));
 });
+
+
+require('require-dir')('build/tasks');

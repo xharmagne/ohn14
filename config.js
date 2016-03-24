@@ -299,9 +299,6 @@ System.config({
       "aurelia-framework",
       "aurelia-fetch-client",
       "fetch"
-    ],
-    "main.js": [
-      "bootstrap"
     ]
   }
 });
