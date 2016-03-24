@@ -58,7 +58,7 @@ if ($mysqli->multi_query($query)) {
         }
 
         $body = sprintf('<div style="width:600px;margin:0 auto">
-                          <img src="http://ohn.ozhadou.net/img/img_banner.jpg" alt="OHN14" style="width:auto;max-height:170px" />
+                          <img src="http://ohn.ozhadou.net/img/banner.jpg" alt="OHN14" style="width:auto;max-height:170px" />
 
                           <h1>OHN14 Registration confirmed</h1>
 
