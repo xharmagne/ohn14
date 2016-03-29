@@ -39,7 +39,7 @@ export class App {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('http://dev.ozhadou.net/scripts/');
+        .withBaseUrl('http://localhost:89/ohn14/scripts/');
     });
 
     this.http = http;

@@ -555,3 +555,105 @@ tr.registrants-sum td {
     position: absolute;
     width: 1px;
 }
+
+.options-container.au-enter {
+    opacity: 0!important;
+    max-height: 0!important;
+    input, label, select {
+       transform:scaleY(0)!important;
+    }
+}
+
+.options-container.au-enter-active {
+
+      -webkit-animation: fadeIn 0.3s;
+      animation: fadeIn 0.3s;
+
+    input, label, select {
+    animation: scaleBackY 0.3s;
+    }
+}
+
+.options-container.au-leave-active {
+        -webkit-animation: fadeOut 0.3s;
+        animation: fadeOut 0.3s;
+
+      input, label, select {
+        animation: scaleDownY 0.3s;
+      }
+}
+
+.au-stagger {
+  -webkit-animation-delay:50ms;
+  animation-delay:50ms;
+}
+
+.registrant-name.au-enter-active {
+  -webkit-animation: fadeIn 0.3s;
+  animation: fadeIn 0.3s;
+}
+
+.registrant-name.au-leave-active {
+    -webkit-animation: fadeOut 0.3s;
+    animation: fadeOut 0.3s;
+}
+
+/* CSS3-Animations */
+@-webkit-keyframes fadeIn {
+    0%   { opacity: 0; max-height: 0px; }
+    100% { opacity: 1;  max-height: 500px; }
+}
+
+@keyframes fadeIn {
+  0%   { opacity: 0; max-height: 0px; }
+  100% { opacity: 1;  max-height: 500px; }
+}
+
+@-webkit-keyframes growY {
+    0%   { max-height: 0px; }
+    100% { max-height: 500px; }
+}
+
+@keyframes growY {
+  0%   { max-height: 0px; }
+  100% { max-height: 500px; }
+}
+
+@-webkit-keyframes shrinkY {
+    0%   { max-height: 500px; }
+    100% { max-height: 0px; }
+}
+
+@keyframes shrinkY {
+  0%   { max-height: 500px; }
+  100% { max-height: 0px; }
+}
+
+@-webkit-keyframes scaleDownY {
+    0%   { transform: scaleY(1); }
+    100% { transform: scaleY(0); }
+}
+
+@keyframes scaleDownY {
+  0%   { transform: scaleY(1); }
+  100% { transform: scaleY(0); }
+}
+@-webkit-keyframes scaleBackY {
+    0%   { transform: scaleY(0); }
+    100% { transform: scaleY(1); }
+}
+
+@keyframes scaleBackY {
+  0%   { transform: scaleY(0); }
+  100% { transform: scaleY(1); }
+}
+
+@-webkit-keyframes fadeOut {
+    0%   { opacity: 1; max-height: 500px; }
+    100% { opacity: 0; max-height: 0px; }
+}
+
+@keyframes fadeOut {
+  0%   { opacity: 1; max-height: 500px; }
+  100% { opacity: 0; max-height: 0px; }
+}

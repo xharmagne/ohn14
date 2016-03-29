@@ -38,8 +38,8 @@
   </div>
 
   <div class="options-row full-width">
-    <div if.bind="showFilterOptions" class="row" style="max-width:53rem;">
-      <div class="options-container small-12 columns">
+    <div  class="filter-options row"  style="max-width:53rem;">
+      <div class="au-animate options-container small-12 columns" if.bind="showFilterOptions">
         <div class="row">
           <div class="medium-3 columns">
             <label for="txtGamertag">Gamertag</label>
@@ -83,7 +83,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr class="registrant-name" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
+            <tr class="registrant-name au-animate" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
                 <td><div style="font-size: 1.1rem; padding: 0.25rem 0">${registrant.gamertag}</div></td>
                 <td>${registrant.region}</td>
                 <td>${registrant.passType}</td>

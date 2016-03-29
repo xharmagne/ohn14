@@ -206,11 +206,6 @@ System.config({
       "main.js"
     ],
     "aurelia.js": [
-      "github:components/jquery@2.2.1.js",
-      "github:components/jquery@2.2.1/jquery.js",
-      "github:twbs/bootstrap@3.3.6.js",
-      "github:twbs/bootstrap@3.3.6/css/bootstrap.css!github:systemjs/plugin-text@0.0.3.js",
-      "github:twbs/bootstrap@3.3.6/js/bootstrap.js",
       "npm:aurelia-animator-css@1.0.0-beta.1.1.2.js",
       "npm:aurelia-animator-css@1.0.0-beta.1.1.2/aurelia-animator-css.js",
       "npm:aurelia-binding@1.0.0-beta.1.2.2.js",
