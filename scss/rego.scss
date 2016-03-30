@@ -532,10 +532,15 @@ table tr.grand-total td {
 .options-container {
     background-color: #eef0f3;
     border-radius: 8px;
-    padding: 0.8rem 1.1rem 0.2rem 1.1rem;
+    padding: 0rem 1.1rem 0rem 1.1rem;
 
   label {
       color: #0a0a0a;
+  }
+
+  .option-column {
+    margin-top: 0.8rem;
+    margin-bottom: 0.2rem;
   }
 }
 
@@ -564,6 +569,12 @@ tr.registrants-sum td {
     }
 }
 
+.options-container {
+  input {
+    transition: none;
+  }
+}
+
 .options-container.au-enter-active {
 
       -webkit-animation: fadeIn 0.3s;
@@ -588,15 +599,46 @@ tr.registrants-sum td {
   animation-delay:50ms;
 }
 
-.registrant-name.au-enter-active {
-  -webkit-animation: fadeIn 0.3s;
-  animation: fadeIn 0.3s;
+tr.registrant-name  {
+
+  td {
+    margin: 0;
+    padding: 0;
+
+    div {
+      margin: 0.5rem;
+    }
+  }
+
 }
 
-.registrant-name.au-leave-active {
-    -webkit-animation: fadeOut 0.3s;
-    animation: fadeOut 0.3s;
+tr.registrant-name.au-enter {
+  opacity: 0!important;
+  max-height: 0!important;
+    td div  {
+      opacity: 0!important;
+      max-height: 0!important;
+    }
 }
+
+tr.registrant-name.au-enter-active {
+  -webkit-animation: fadeIn 0.5s;
+  animation: fadeIn 0.5s;
+    td div  {
+      -webkit-animation: fadeIn 0.5s;
+      animation: fadeIn 0.5s;
+    }
+}
+
+tr.registrant-name.au-leave-active {
+  -webkit-animation: fadeOut 0.5s;
+  animation: fadeOut 0.5s;
+    td div  {
+    -webkit-animation: fadeOut 0.5s;
+    animation: fadeOut 0.5s;
+  }
+}
+
 
 /* CSS3-Animations */
 @-webkit-keyframes fadeIn {

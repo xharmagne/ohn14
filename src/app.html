@@ -41,23 +41,23 @@
     <div  class="filter-options row"  style="max-width:53rem;">
       <div class="au-animate options-container small-12 columns" if.bind="showFilterOptions">
         <div class="row">
-          <div class="medium-3 columns">
+          <div class="option-column medium-3 columns">
             <label for="txtGamertag">Gamertag</label>
             <input id="txtGamertag" value.bind="filterGamertag" type="text" />
           </div>
-          <div class="medium-3 columns">
+          <div class="option-column medium-3 columns">
             <label for="selRegion">Region</label>
             <select id="selRegion" value.bind="filterRegion">
                   <option repeat.for="option of regions" value.bind="option.value">${option.name}</option>
             </select>
           </div>
-          <div class="medium-3 columns">
+          <div class="option-column medium-3 columns">
             <label for="selPassType">Pass type</label>
             <select id="selPassType" value.bind="filterPassType">
                   <option repeat.for="option of passTypes" value.bind="option.value">${option.name}</option>
             </select>
           </div>
-          <div class="medium-3 columns">
+          <div class="option-column medium-3 columns">
             <label for="selGames">Game</label>
             <select id="selGames" value.bind="filterGame">
                   <option repeat.for="option of games" value.bind="option.value">${option.name}</option>
@@ -82,22 +82,26 @@
                 <td>Games</td>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="au-stagger">
             <tr class="registrant-name au-animate" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
-                <td><div style="font-size: 1.1rem; padding: 0.25rem 0">${registrant.gamertag}</div></td>
-                <td>${registrant.region}</td>
-                <td>${registrant.passType}</td>
+                <td><div style="font-size: 1.1rem;">${registrant.gamertag}</div></td>
+                <td><div>${registrant.region}</div></td>
+                <td><div>${registrant.passType}</div></td>
                 <td>
-                  <span if.bind="registrant.games.sfRegistered">SFV </span>
-                  <span if.bind="registrant.games.tkRegistered">T7 </span>
-                  <span if.bind="registrant.games.mkRegistered">MKX </span>
-                  <span if.bind="registrant.games.a1Registered">VF5FS </span>
+                  <div>
+                    <span if.bind="registrant.games.sfRegistered">SFV </span>
+                    <span if.bind="registrant.games.tkRegistered">T7 </span>
+                    <span if.bind="registrant.games.mkRegistered">MKX </span>
+                    <span if.bind="registrant.games.a1Registered">VF5FS </span>
+                  </div>
                 </td>
             </tr>
             <tr class="registrants-sum">
               <td colspan="4" class="text-center"><span style="font-weight:bold">${registrants | filterCount:filterGamertag:filterRegion:filterPassType:filterGame}</span> of <span style="font-weight:bold">${registrants | listCount}</span> registrants</td>
             </tr>
         </tbody>
+
+
       </table>
     </div>
   </div>
