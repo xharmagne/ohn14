@@ -1,6 +1,10 @@
 export class FilterValueConverter {
   toView(value, gamertag, region, passType, game) {
 
+    if (!value) {
+      return value;
+    }
+
     var filtered = value.filter(function(registrant) {
         return (!gamertag || registrant.gamertag.toLowerCase().includes(gamertag.toLowerCase())) &&
           (!region || registrant.region == region) &&
