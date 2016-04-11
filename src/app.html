@@ -82,8 +82,8 @@
                 <td>Games</td>
             </tr>
         </thead>
-        <tbody class="au-stagger">
-            <tr class="registrant-name au-animate" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
+        <tbody>
+            <tr class="registrant-name" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
                 <td><div style="font-size: 1.1rem;">${registrant.gamertag}</div></td>
                 <td><div>${registrant.region}</div></td>
                 <td><div>${registrant.passType}</div></td>

@@ -1,4 +1,5 @@
 <?php
+header("Access-Control-Allow-Origin: *");
 require_once('./rconfig.php');
 
 $result = null;
@@ -15,26 +16,26 @@ if ($qryresult = $mysqli->query($query)) {
 
   while ($row = $qryresult->fetch_assoc()) {
 
-      $sfRegistered = 0;
-      $tkRegistered = 0;
-      $mkRegistered = 0;
-      $a1Registered = 0;
-      $a2Registered = 0;
+      $sfRegistered = false;
+      $tkRegistered = false;
+      $mkRegistered = false;
+      $a1Registered = false;
+      $a2Registered = false;
 
       if ($row["SF"]) {
-        $sfRegistered = 1;
+        $sfRegistered = true;
       }
         if ($row["TK"]) {
-        $tkRegistered = 1;
+        $tkRegistered = true;
       }
         if ($row["MK"]) {
-        $mkRegistered = 1;
+        $mkRegistered = true;
       }
       if ($row["A1"]) {
-        $a1Registered = 1;
+        $a1Registered = true;
       }
       if ($row["A2"]) {
-        $a2Registered = 1;
+        $a2Registered = true;
       }
 
       $games = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered);
