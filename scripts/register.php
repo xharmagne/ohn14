@@ -15,7 +15,7 @@ $count = count($registrants);
 $insertcount = 0;
 $insertquery =
   "insert into `" . DB_TABLE . "` (`Gamertag`, `Pass_type`, `First_name`, `Last_name`, `Email`, `Contact_number`, `State`,
-                                    `SF`, `TK`, `MK`, `A1`, `A2`,
+                                    `SF`, `TK`, `MK`, `A1`, `A2`, `S1`, `S2`, `S3`, `S4`, `Shirt_size`,
                                     `Payment_ID`, `Payment_status`, `Registration_date`) values ";
 
 $updatequery = "";
@@ -35,12 +35,20 @@ for ($i=0; $i < $count; $i++) {
   if (trim($state) == 'Other') {
     $state = $mysqli->real_escape_string($registrants[$i]->otherLocation);
   }
+  $shirtsize = "";
+  if ($registrants[$i]->shirt) {
+    $shirtsize = $mysqli->real_escape_string($registrants[$i]->shirtSize);
+  }
 
   $sf = "false";
   $tk = "false";
   $mk  = "false";
   $a1  = "false";
   $a2  = "false";
+  $s1  = "false";
+  $s2  = "false";
+  $s3  = "false";
+  $s4  = "false";
 
   if ($passtype != "Spectator") {
     $sf = ($registrants[$i]->sf) ? "true" : "false";
@@ -48,12 +56,16 @@ for ($i=0; $i < $count; $i++) {
     $mk  = ($registrants[$i]->mk) ? "true" : "false";
     $a1  = ($registrants[$i]->a1) ? "true" : "false";
     $a2  = ($registrants[$i]->a2) ? "true" : "false";
+    $s1  = ($registrants[$i]->s1) ? "true" : "false";
+    $s2  = ($registrants[$i]->s2) ? "true" : "false";
+    $s3  = ($registrants[$i]->s3) ? "true" : "false";
+    $s4  = ($registrants[$i]->s4) ? "true" : "false";
   }
 
   if ($passtype != "AddGames") {
 
     $insertquery .= "('$gamertag', '$passtype', '$firstname', '$lastname', '$email', '$contactnumber', '$state',
-                      $sf, $tk, $mk, $a1, $a2,
+                      $sf, $tk, $mk, $a1, $a2, $s1, $s2, $s3, $s4, '$shirtsize',
                       '$paymentId', 'Pending', '$d'), ";
 
     $insertcount = $insertcount + 1;
@@ -81,6 +93,26 @@ for ($i=0; $i < $count; $i++) {
      if ($registrants[$i]->a2) {
       $updatequery .= "update `" . DB_TABLE . "` set `A2` = true where `Gamertag` = '$gamertag'; ";
       $status .= "A2";
+    }
+    if ($registrants[$i]->s1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `S1` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "S1";
+    }
+    if ($registrants[$i]->s2) {
+     $updatequery .= "update `" . DB_TABLE . "` set `S2` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "S2";
+    }
+    if ($registrants[$i]->s3) {
+     $updatequery .= "update `" . DB_TABLE . "` set `S3` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "S3";
+    }
+    if ($registrants[$i]->s4) {
+     $updatequery .= "update `" . DB_TABLE . "` set `S4` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "S4";
+    }
+    if ($registrants[$i]->shirt) {
+     $updatequery .= "update `" . DB_TABLE . "` set `Shirt_size` = '$shirtsize' where `Gamertag` = '$gamertag'; ";
+     $status .= "Shirt";
     }
 
     $updatequery .= "update `" . DB_TABLE . "` set `Payment_status` = CONCAT(`Payment_status`, '$status'), `Payment_ID` = '$paymentId' where `Gamertag` = '$gamertag'; ";

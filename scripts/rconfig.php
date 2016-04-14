@@ -51,7 +51,7 @@ define('CANCEL_URL', 'http://dev.ozhadou.net/cancelled.html');
 
 ////////////// All /////////////////////////////
 
-define('SMTP_HOST', 'fsqn-y2w8.accessdomain.com');
+define('SMTP_HOST', 'mail.w6mp-wdmr.accessdomain.com');
 define('SMTP_USER', 'mail@ozhadou.net');
 define('SMTP_PASSWORD', 'oZhadou!2015');
 

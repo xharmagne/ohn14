@@ -20,6 +20,13 @@ if ($qryresult = $mysqli->query($query)) {
       $mkRegistered = 0;
       $a1Registered = 0;
       $a2Registered = 0;
+      $s1Registered = 0;
+      $s2Registered = 0;
+      $s3Registered = 0;
+      $s4Registered = 0;
+      $shirtRegistered = 0;
+      $shirtSize = "";
+
 
       if ($row["SF"]) {
         $sfRegistered = 1;
@@ -36,8 +43,27 @@ if ($qryresult = $mysqli->query($query)) {
       if ($row["A2"]) {
         $a2Registered = 1;
       }
+      if ($row["S1"]) {
+        $s1Registered = 1;
+      }
+      if ($row["S2"]) {
+        $s2Registered = 1;
+      }
+      if ($row["S3"]) {
+        $s3Registered = 1;
+      }
+      if ($row["S4"]) {
+        $s4Registered = 1;
+      }
 
-      $arr = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered);
+      if (!empty($row["Shirt_size"])) {
+        $shirtRegistered = 1;
+        $shirtSize = $row["Shirt_size"];
+      }
+
+      $arr = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered,
+                   's1Registered' => $s1Registered, 's2Registered' => $s2Registered, 's3Registered' => $s3Registered, 's4Registered' => $s4Registered,
+                   'shirtRegistered' => $shirtRegistered, 'shirtSize' => $shirtSize);
       $result = json_encode($arr);
 
   }

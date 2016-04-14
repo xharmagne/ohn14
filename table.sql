@@ -11,9 +11,14 @@ CREATE TABLE IF NOT EXISTS `ohn14_registrants` (
   `MK` tinyint(1) NOT NULL,
   `A1` tinyint(1) NOT NULL,
   `A2` tinyint(1) NOT NULL,
+  `S1` tinyint(1) NOT NULL,
+  `S2` tinyint(1) NOT NULL,
+  `S3` tinyint(1) NOT NULL,
+  `S4` tinyint(1) NOT NULL,
   `Payment_ID` varchar(100) NULL,
   `Payment_status` varchar(100) NULL,
   `Payer_ID` varchar(100) NULL,
   `Payment_date` varchar(100) NULL,
-  `Registration_date` varchar(100) NULL
+  `Registration_date` varchar(100) NULL,
+  `Shirt_size` varchar(5) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

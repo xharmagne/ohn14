@@ -427,6 +427,27 @@ table tr.grand-total td {
     background-color: $ozhadou-teal;
 }
 
+td div span.game-name {
+  border-right: 1px solid #c5c5c5;
+  padding-right: 0.5rem;
+  padding-left: 0.25rem;
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+td.pass-type {
+  display: none;
+}
+
+@media #{$medium-up} {
+
+  td.pass-type {
+    display: block;
+  }
+
+}
 
 //// Animations ///////////////////////////////////////
 

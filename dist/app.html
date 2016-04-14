@@ -78,21 +78,25 @@
             <tr>
                 <td>Gamertag</td>
                 <td>Region</td>
-                <td>Pass type</td>
+                <td class="pass-type">Pass type</td>
                 <td>Games</td>
             </tr>
         </thead>
-        <tbody class="au-stagger">
-            <tr class="registrant-name au-animate" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
+        <tbody>
+            <tr class="registrant-name" repeat.for="registrant of registrants | filter:filterGamertag:filterRegion:filterPassType:filterGame">
                 <td><div style="font-size: 1.1rem;">${registrant.gamertag}</div></td>
                 <td><div>${registrant.region}</div></td>
-                <td><div>${registrant.passType}</div></td>
+                <td class="pass-type"><div>${registrant.passType}</div></td>
                 <td>
                   <div>
-                    <span if.bind="registrant.games.sfRegistered">SFV </span>
-                    <span if.bind="registrant.games.tkRegistered">T7 </span>
-                    <span if.bind="registrant.games.mkRegistered">MKX </span>
-                    <span if.bind="registrant.games.a1Registered">VF5FS </span>
+                    <span class="game-name" if.bind="registrant.games.sfRegistered">SFV</span>
+                    <span class="game-name" if.bind="registrant.games.tkRegistered">T7</span>
+                    <span class="game-name" if.bind="registrant.games.mkRegistered">MKX</span>
+                    <span class="game-name" if.bind="registrant.games.a1Registered">VF5FS</span>
+                    <span class="game-name" if.bind="registrant.games.s1Registered">SSBM Singles</span>
+                    <span class="game-name" if.bind="registrant.games.s2Registered">SSBM Doubles</span>
+                    <span class="game-name" if.bind="registrant.games.s3Registered">SSB4 Singles</span>
+                    <span class="game-name" if.bind="registrant.games.s4Registered">SSB4 Doubles</span>
                   </div>
                 </td>
             </tr>

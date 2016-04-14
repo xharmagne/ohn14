@@ -17,7 +17,11 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                   { code: "TK", description: "Tekken 7 tournament entry", price: 10 },
                   { code: "MK", description: "Mortal Kombat X tournament entry", price: 10 },
                   { code: "A1", description: "Virtua Fighter tournament entry", price: 10 },
-                  { code: "A2", description: "Other 2 tournament entry", price: 10 }];
+                  { code: "A2", description: "Other 2 tournament entry", price: 10 },
+                  { code: "S1", description: "Super Smash Bros. Melee (Singles) tournament entry", price: 10 },
+                  { code: "S2", description: "Super Smash Bros. Melee (Doubles) tournament entry", price: 10 },
+                  { code: "S3", description: "Super Smash Bros. for Wii U (Singles) tournament entry", price: 10 },
+                  { code: "S4", description: "Super Smash Bros. for Wii U (Doubles) tournament entry", price: 10 }];
 
     that.init = function () {
         that.scope.safeApply(function () {
@@ -54,6 +58,20 @@ function RegoController($scope, $http, $anchorScroll, $window) {
             pti.currency = "AUD";
             r.items.push(pti);
 
+            if (r.shirt) {
+              var shirtItemName = "OHN14 Shirt Size " + r.shirtSize;
+              var shirtPrice = 25;
+
+              var si = {};
+              si.quantity = "1";
+              si.name = shirtItemName;
+              si.description = "For " + r.gamertag;
+              si.price = shirtPrice;
+              si.currency = "AUD";
+              r.items.push(si);
+            }
+
+
             // Games
             if (r.type == "Competitor" || r.type == "AddGames") {
                 var gameTypeMatches = $.grep(that.games, function (g) {
@@ -61,7 +79,11 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                            (r.tk && g.code == "TK") ||
                            (r.mk && g.code == "MK") ||
                            (r.a1 && g.code == "A1") ||
-                           (r.a2 && g.code == "A2");
+                           (r.a2 && g.code == "A2") ||
+                           (r.s1 && g.code == "S1") ||
+                           (r.s2 && g.code == "S2") ||
+                           (r.s3 && g.code == "S3") ||
+                           (r.s4 && g.code == "S4");
                 });
 
                 gameTypeMatches.forEach(function (g) {
@@ -128,6 +150,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.mk = false;
         registrant.a1 = false;
         registrant.a2 = false;
+        registrant.s1 = false;
+        registrant.s2 = false;
         registrant.isCollapsed = false;
 
         registrant.sfRegistered = false;
@@ -135,6 +159,11 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.mkRegistered = false;
         registrant.a1Registered = false;
         registrant.a2Registered = false;
+        registrant.s1Registered = false;
+        registrant.s2Registered = false;
+
+        registrant.shirt = false;
+        registrant.shirtSize = "M";
 
         registrant.items = [];
         registrant.total = 0;
@@ -185,6 +214,10 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.mkRegistered = false;
         registrant.a1Registered = false;
         registrant.a2Registered = false;
+        registrant.s1Registered = false;
+        registrant.s2Registered = false;
+        registrant.shirtRegistered = false;
+        registrant.shirtSize = "M";
     };
 
     that.scope.getExistingRegistrant = function (registrant) {
@@ -209,6 +242,14 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                     registrant.mkRegistered = data.mkRegistered == true;
                     registrant.a1Registered = data.a1Registered == true;
                     registrant.a2Registered = data.a2Registered == true;
+                    registrant.s1Registered = data.s1Registered == true;
+                    registrant.s2Registered = data.s2Registered == true;
+                    registrant.s3Registered = data.s3Registered == true;
+                    registrant.s4Registered = data.s4Registered == true;
+                    registrant.shirtRegistered = data.shirtRegistered == true;
+                    if (data.shirtSize) {
+                      registrant.shirtSize = data.shirtSize;
+                    }
                 }
 
             });

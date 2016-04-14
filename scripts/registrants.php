@@ -21,6 +21,10 @@ if ($qryresult = $mysqli->query($query)) {
       $mkRegistered = false;
       $a1Registered = false;
       $a2Registered = false;
+      $s1Registered = false;
+      $s2Registered = false;
+      $s3Registered = false;
+      $s4Registered = false;
 
       if ($row["SF"]) {
         $sfRegistered = true;
@@ -37,8 +41,20 @@ if ($qryresult = $mysqli->query($query)) {
       if ($row["A2"]) {
         $a2Registered = true;
       }
+      if ($row["S1"]) {
+        $s1Registered = true;
+      }
+      if ($row["S2"]) {
+        $s2Registered = true;
+      }
+      if ($row["S3"]) {
+        $s3Registered = true;
+      }
+      if ($row["S4"]) {
+        $s4Registered = true;
+      }
 
-      $games = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered);
+      $games = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered, 's1Registered' => $s1Registered, 's2Registered' => $s2Registered, 's3Registered' => $s3Registered, 's4Registered' => $s4Registered);
       $registrant = array('gamertag' => $row["Gamertag"], 'passType' => $row["Pass_type"], 'region' => $row["State"], 'games' => $games);
 
       array_push($registrants, $registrant);

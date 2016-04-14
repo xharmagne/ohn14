@@ -34,24 +34,40 @@ if ($mysqli->multi_query($query)) {
         $pass = $row["Pass_type"];
         $email = $row["Email"];
         $games = "";
+        $shirt = "N/A";
 
         $result.=$gamertag;
 
         if ($row["SF"]) {
-          $games .= "SFV ";
+          $games .= "SFV | ";
         }
          if ($row["TK"]) {
-          $games .= "T7 ";
+          $games .= "T7 | ";
         }
          if ($row["MK"]) {
-          $games .= "MKX ";
+          $games .= "MKX | ";
         }
          if ($row["A1"]) {
-          $games .= "VF ";
+          $games .= "VF | ";
         }
          if ($row["A2"]) {
-          $games .= "A2 ";
+          $games .= "A2 | ";
         }
+        if ($row["S1"]) {
+         $games .= "SSBM Singles | ";
+        }
+        if ($row["S2"]) {
+         $games .= "SSBM Doubles | ";
+        }
+       if ($row["S3"]) {
+        $games .= "SSB4 Singles | ";
+       }
+       if ($row["S4"]) {
+        $games .= "SSB4 Doubles | ";
+       }
+       if (!empty($row["Shirt_size"])) {
+         $shirt = "Size ".$row["Shirt_size"];
+       }
 
         if ($games == "") {
           $games = "N/A";
@@ -68,6 +84,7 @@ if ($mysqli->multi_query($query)) {
 	                          <tr><td style="font-weight:bold;width:100px">Gamertag</td><td>%s</td></tr>
 	                          <tr><td style="font-weight:bold;">Pass type</td><td>%s</td></tr>
 	                          <tr><td style="font-weight:bold;">Games</td><td>%s</td></tr>
+                            <tr><td style="font-weight:bold;">Shirt</td><td>%s</td></tr>
                           </table>
 
                           <br/>
@@ -79,16 +96,17 @@ if ($mysqli->multi_query($query)) {
                             <li style="font-family:Roboto, Verdana;">Show us photo identification if requested </li>
                           </ul>
 
-                        </div>', $gamertag, $pass, $games);
+                        </div>', $gamertag, $pass, $games, $shirt);
 
         $plainBody = sprintf("Thanks for registering for OHN14! Here are the details of your registration:\n\n
                               Gamertag: %s\n
 	                            Pass type: %s\n
 	                            Games: %s\n
+                              Shirt: %s\n
                               \n\n
                               What to do on entry:\n
                               Show us a copy of this email (printed or on your smartphone)\n
-                              Show us photo identification if requested", $gamertag, $pass, $games);
+                              Show us photo identification if requested", $gamertag, $pass, $games, $shirt);
 
         send_mail($name, $email, "OHN14 Registration Confirmed", $body, $plainBody);
     }

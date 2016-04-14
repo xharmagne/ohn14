@@ -32,14 +32,18 @@ export class App {
       {value: "SF", name: "SFV"},
       {value: "TK", name: "TK7"},
       {value: "MK", name: "MKX"},
-      {value: "A1", name: "VF5FS"}
+      {value: "A1", name: "VF5FS"},
+      {value: "S1", name: "Smash Melee Singles"},
+      {value: "S2", name: "Smash Melee Doubles"},
+      {value: "S3", name: "Smash Wii U Singles"},
+      {value: "S4", name: "Smash Wii U Doubles"}
   ];
 
   constructor(http) {
     http.configure(config => {
       config
         .useStandardConfiguration()
-        .withBaseUrl('http://dev.ozhadou.net/scripts/');
+        .withBaseUrl('http://localhost:89/ohn14/scripts/');
     });
 
     this.http = http;

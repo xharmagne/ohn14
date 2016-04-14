@@ -123,7 +123,7 @@
                                         <label ng-class="registrant.type == 'AddGames' ? 'active' : ''" class="button type-button">
                                             <input required="" type="radio" name="optRegistrantType" ng-model="registrant.type" ng-change="getExistingRegistrant(registrant)" value="AddGames" class="ui-helper-hidden-accessible">
                                             <span class="button-text title">Add games</span>
-                                            <span class="button-text subtitle">to existing pass</span>
+                                            <span class="button-text subtitle">to existing Competitor pass</span>
                                             <span class="button-text price">n/a</span>
                                         </label>
 
@@ -280,7 +280,8 @@
                                         </li>
                                         <li>
                                             <div class="game-button-container">
-                                                <input type="checkbox" ng-model="registrant.a1" id="chkA1-{{ registrant.index }}" class="ui-helper-hidden-accessible">
+                                                <input type="checkbox" ng-model="registrant.a1" id="chkA1-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.a1Registered">
                                                 <label for="chkA1-{{ registrant.index }}" ng-class="registrant.a1 == true ? 'active' : ''" class="game-button button">
                                                     <img src="img/gamelogo-a1-white.png" />
                                                     <span class="button-text price">$10</span>
@@ -289,9 +290,53 @@
                                             </div>
                                         </li>
                                         <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.s1" id="chkS1-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.s1Registered">
+                                                <label for="chkS1-{{ registrant.index }}" ng-class="registrant.s1 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-s1-white.png" />
+                                                    <span class="button-text price">$10</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.s1Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.s2" id="chkS2-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.s2Registered">
+                                                <label for="chkS2-{{ registrant.index }}" ng-class="registrant.s2 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-s2-white.png" />
+                                                    <span class="button-text price">$10</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.s2Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.s3" id="chkS3-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.s3Registered">
+                                                <label for="chkS3-{{ registrant.index }}" ng-class="registrant.s3 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-s3-white.png" />
+                                                    <span class="button-text price">$10</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.s3Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.s4" id="chkS4-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.s4Registered">
+                                                <label for="chkS4-{{ registrant.index }}" ng-class="registrant.s4 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-s4-white.png" />
+                                                    <span class="button-text price">$10</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.s4Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
                                             <div class="game-button-container" style="display:none">
                                                 <input type="checkbox" disabled ng-model="registrant.a2" id="chkA2-{{ registrant.index }}" class="ui-helper-hidden-accessible">
-                                                <label for="chkA2{{ registrant.index }}" ng-class="registrant.a2 == true ? 'active' : ''" class="game-button button">
+                                                <label for="chkA2-{{ registrant.index }}" ng-class="registrant.a2 == true ? 'active' : ''" class="game-button button">
                                                     <img src="img/gamelogo-a2-white.png" />
                                                     <span class="button-text price">$10</span>
                                                 </label>
@@ -301,6 +346,38 @@
                                     </ul>
                                 </div>
                             </div>
+                        </div>
+
+                        <div class="slide-from-top merchandise-section form-section full-width" ng-hide="registrant.type == ''">
+                            <div class="row form-section-header content-width">
+                                <div class="small-12 medium-4 columns">
+                                    <h4 class="subheader">Merchandise</h4>
+                                </div>
+                            </div>
+
+                            <div class="row content-width">
+                                <div class="small-8 small-centered medium-uncentered medium-3 columns end">
+
+                                  <div class="game-button-container">
+                                      <input type="checkbox" ng-model="registrant.shirt" id="chkShirt-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                             ng-disabled="registrant.shirtRegistered">
+                                      <label for="chkShirt-{{ registrant.index }}" ng-class="registrant.shirt == true ? 'active' : ''" class="game-button button">
+                                          <img src="img/shirt.png" />
+                                          <span class="button-text price">$25</span>
+                                      </label>
+
+                                      <select name="shirtSize" ng-model="registrant.shirtSize" ng-disabled="!registrant.shirt" style="margin-top:0.5rem;">
+                                          <option value="S">S</option>
+                                          <option value="M">M</option>
+                                          <option value="L">L</option>
+                                          <option value="XL">XL</option>
+                                      </select>
+                                  </div>
+
+                                </div>
+                            </div>
+
+
                         </div>
 
                     </div>
