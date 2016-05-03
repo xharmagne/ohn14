@@ -111,8 +111,18 @@ a:hover {
 .main-info-content .venue {
     font-family: Raleway;
     color: #d2f0ff;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     line-height: 2.5rem;
+
+}
+
+.main-info-content .venue a {
+  color: #d2f0ff;
+}
+
+.main-info-content .venue a:hover {
+  color: #ebf7fa;
+  border-bottom: solid #ebf7fa 1px;
 }
 
 .main-info-content .button {

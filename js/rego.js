@@ -9,8 +9,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
     that.anchorScroll = $anchorScroll;
     that.currentRegistrantForAgeCheck = null;
 
-    that.passTypes = [{ type: "Competitor", description: "Competitor pass", price: 45 },
-                      { type: "Spectator", description: "Spectator pass", price: 5 },
+    that.passTypes = [{ type: "Competitor", description: "Competitor pass", price: 48 },
+                      { type: "Spectator", description: "Spectator pass", price: 10 },
                       { type: "AddGames", description: "Add games to existing pass", price: 0 }];
 
     that.games = [{ code: "SF", description: "SFV tournament entry", price: 10 },
