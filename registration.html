@@ -465,14 +465,21 @@
 
                 <!-- ACTIONS -->
                 <div class="buttons-section form-section full-width">
-                    <div class="row content-width">
-                        <div class="small-12 small-centered small-text-center medium-text-left columns">
-                            <button class="button secondary" ng-click="editRegistration()">Edit registration</button>
-                            <a href="#" data-paypal-button="true" ng-click="pay()">
-                                <img src="https://www.paypal.com/en_AU/AU/i/btn/btn_xpressCheckout.gif" style="margin-right:7px;">
-                            </a>
-                        </div>
+                  <div class="row content-width">
+                    <div class="small-12 medium-9 small-text-center medium-text-left columns end " style="margin-bottom: 1.5rem;">
+                      <p style="font-size: 0.8rem; margin-bottom: 0.3rem;">Please note that by registering for this event:</p>
+                      <p style="font-size: 0.8rem;margin-bottom: 0.3rem;">1) you agree to follow the <a href="/#rules" target="_blank">rules and regulations for OHN</a> as they appear on the OHN website and</p>
+                      <p style="font-size: 0.8rem;margin-bottom: 0.4rem;">2) you agree that OzHadou may take photographs and film footage of you at the above event, and may use the photographs and/or film footage for OzHadou's promotional and/or commercial purposes, including for use on the OzHadou website and Facebook page.  </p>
                     </div>
+                  </div>
+                  <div class="row content-width">
+                      <div class="small-12 small-centered small-text-center medium-text-left columns">
+                          <button class="button secondary" ng-click="editRegistration()">Edit registration</button>
+                          <a href="#" data-paypal-button="true" style="margin-left:10px;margin-right:10px;" ng-click="pay()">
+                              <img src="https://www.paypal.com/en_AU/AU/i/btn/btn_xpressCheckout.gif" style="margin-right:7px;">
+                          </a>
+                      </div>
+                  </div>
                 </div>
             </div>
 
