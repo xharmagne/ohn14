@@ -38,7 +38,7 @@ function send_mail($toName, $toAddress, $subject, $body, $plainBody) {
   $mail->addAddress($toAddress, $toName);
 
   //Send copy to Ozhadou
-  //$mail->addBCC('ohn@ozhadou.net', 'Ozhadou team');
+  $mail->addBCC('ohn@ozhadou.net', 'OzHadou team');
 
   $mail->isHTML(true);
 
