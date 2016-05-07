@@ -15,7 +15,7 @@ $count = count($registrants);
 $insertcount = 0;
 $insertquery =
   "insert into `" . DB_TABLE . "` (`Gamertag`, `Pass_type`, `First_name`, `Last_name`, `Email`, `Contact_number`, `State`,
-                                    `SF`, `TK`, `MK`, `A1`, `A2`, `S1`, `S2`, `S3`, `S4`, `Shirt_size`,
+                                    `SF`, `TK`, `MK`, `A1`, `A2`, `S1`, `S2`, `S3`, `S4`, `Shirt_size`, `S2_Notes`, `S4_Notes`,
                                     `Payment_ID`, `Payment_status`, `Registration_date`) values ";
 
 $updatequery = "";
@@ -36,8 +36,18 @@ for ($i=0; $i < $count; $i++) {
     $state = $mysqli->real_escape_string($registrants[$i]->otherLocation);
   }
   $shirtsize = "";
+  $s2Notes = "";
+  $s4Notes = "";
   if ($registrants[$i]->shirt) {
     $shirtsize = $mysqli->real_escape_string($registrants[$i]->shirtSize);
+  }
+
+  if ($registrants[$i]->s2 && $registrants[$i]->s2Notes) {
+    $s2Notes = $mysqli->real_escape_string($registrants[$i]->s2Notes);
+  }
+
+  if ($registrants[$i]->s4 && $registrants[$i]->s4Notes) {
+    $s4Notes = $mysqli->real_escape_string($registrants[$i]->s4Notes);
   }
 
   $sf = "false";
@@ -65,7 +75,7 @@ for ($i=0; $i < $count; $i++) {
   if ($passtype != "AddGames") {
 
     $insertquery .= "('$gamertag', '$passtype', '$firstname', '$lastname', '$email', '$contactnumber', '$state',
-                      $sf, $tk, $mk, $a1, $a2, $s1, $s2, $s3, $s4, '$shirtsize',
+                      $sf, $tk, $mk, $a1, $a2, $s1, $s2, $s3, $s4, '$shirtsize', '$s2Notes', '$s4Notes',
                       '$paymentId', 'Pending', '$d'), ";
 
     $insertcount = $insertcount + 1;
@@ -99,7 +109,7 @@ for ($i=0; $i < $count; $i++) {
      $status .= "S1";
     }
     if ($registrants[$i]->s2) {
-     $updatequery .= "update `" . DB_TABLE . "` set `S2` = true where `Gamertag` = '$gamertag'; ";
+     $updatequery .= "update `" . DB_TABLE . "` set `S2` = true, `S2_Notes` = '$s2Notes' where `Gamertag` = '$gamertag'; ";
      $status .= "S2";
     }
     if ($registrants[$i]->s3) {
@@ -107,7 +117,7 @@ for ($i=0; $i < $count; $i++) {
      $status .= "S3";
     }
     if ($registrants[$i]->s4) {
-     $updatequery .= "update `" . DB_TABLE . "` set `S4` = true where `Gamertag` = '$gamertag'; ";
+     $updatequery .= "update `" . DB_TABLE . "` set `S4` = true, `S4_Notes` = '$s4Notes' where `Gamertag` = '$gamertag'; ";
      $status .= "S4";
     }
     if ($registrants[$i]->shirt) {

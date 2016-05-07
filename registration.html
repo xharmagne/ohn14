@@ -302,7 +302,7 @@
                                         </li>
                                         <li>
                                             <div class="game-button-container">
-                                                <input type="checkbox" ng-model="registrant.s2" id="chkS2-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                <input type="checkbox" ng-model="registrant.s2" ng-change="s2SelectionChanged(registrant)" id="chkS2-{{ registrant.index }}" class="ui-helper-hidden-accessible"
                                                        ng-disabled="registrant.s2Registered">
                                                 <label for="chkS2-{{ registrant.index }}" ng-class="registrant.s2 == true ? 'active' : ''" class="game-button button">
                                                     <img src="img/gamelogo-s2-white.png" />
@@ -324,7 +324,7 @@
                                         </li>
                                         <li>
                                             <div class="game-button-container">
-                                                <input type="checkbox" ng-model="registrant.s4" id="chkS4-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                <input type="checkbox" ng-model="registrant.s4" ng-change="s4SelectionChanged(registrant)" id="chkS4-{{ registrant.index }}" class="ui-helper-hidden-accessible"
                                                        ng-disabled="registrant.s4Registered">
                                                 <label for="chkS4-{{ registrant.index }}" ng-class="registrant.s4 == true ? 'active' : ''" class="game-button button">
                                                     <img src="img/gamelogo-s4-white.png" />
@@ -497,6 +497,25 @@
             <button ng-click="closeMkxDialog(true)">Yes</button> <button class="secondary" ng-click="closeMkxDialog(false)">No</button>
         </div>
 
+        <div id="s2Dialog" style="text-align:center" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <h2 id="modalTitle">Who's your teammate?</h2>
+            <p>If you know who you're teaming up with for <b>Smash Melee Doubles</b>, enter their gamertag below.<br>If you're not sure yet, tell us via email at <a href="mailto:ohnsmash@ozhadou.net">ohnsmash@ozhadou.net</a> when you find out.</p>
+            <label>
+                Gamertag
+                <input name="s2gamertag" type="text" required="" maxlength="25" ng-model="currentRegistrantForS2.s2Notes" style="margin-right: auto; margin-left: auto; max-width: 200px;">
+            </label>
+            <button ng-click="closeS2Dialog()">Okay</button>
+        </div>
+
+        <div id="s4Dialog" style="text-align:center" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <h2 id="modalTitle">Who's your teammate?</h2>
+            <p>If you know who you're teaming up with for <b>Smash for Wii U Doubles</b>, enter their gamertag below.<br>If you're not sure yet, tell us via email at <a href="mailto:ohnsmash@ozhadou.net">ohnsmash@ozhadou.net</a> when you find out.</p>
+            <label>
+                Gamertag
+                <input name="s4gamertag" type="text" required="" maxlength="25" ng-model="currentRegistrantForS4.s4Notes" style="margin-right: auto; margin-left: auto; max-width: 200px;" />
+            </label>
+            <button ng-click="closeS4Dialog()">Okay</button>
+        </div>
 
     </div>
 

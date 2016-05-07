@@ -57,13 +57,23 @@ if ($mysqli->multi_query($query)) {
          $games .= "SSBM Singles | ";
         }
         if ($row["S2"]) {
-         $games .= "SSBM Doubles | ";
+          $partnera = "";
+          if (!empty($row["S2_Notes"])) {
+            $partnera = " (with ".$row["S2_Notes"].")";
+          }
+
+         $games .= "SSBM Doubles".$partnera." | ";
         }
        if ($row["S3"]) {
         $games .= "SSB4 Singles | ";
        }
        if ($row["S4"]) {
-        $games .= "SSB4 Doubles | ";
+         $partnerb = "";
+         if (!empty($row["S4_Notes"])) {
+           $partnerb =  " (with ".$row["S4_Notes"].")";
+         }
+
+        $games .= "SSB4 Doubles".$partnerb." | ";
        }
        if (!empty($row["Shirt_size"])) {
          $shirt = "Size ".$row["Shirt_size"];

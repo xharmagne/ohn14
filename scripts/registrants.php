@@ -26,6 +26,9 @@ if ($qryresult = $mysqli->query($query)) {
       $s3Registered = false;
       $s4Registered = false;
 
+      $s2Notes = "";
+      $s4Notes = "";
+
       if ($row["SF"]) {
         $sfRegistered = true;
       }
@@ -46,16 +49,24 @@ if ($qryresult = $mysqli->query($query)) {
       }
       if ($row["S2"]) {
         $s2Registered = true;
+
+        if (!empty($row["S2_Notes"])) {
+          $s2Notes = $row["S2_Notes"];
+        }
       }
       if ($row["S3"]) {
         $s3Registered = true;
       }
       if ($row["S4"]) {
         $s4Registered = true;
+
+        if (!empty($row["S4_Notes"])) {
+          $s4Notes = $row["S4_Notes"];
+        }
       }
 
       $games = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered, 's1Registered' => $s1Registered, 's2Registered' => $s2Registered, 's3Registered' => $s3Registered, 's4Registered' => $s4Registered);
-      $registrant = array('gamertag' => $row["Gamertag"], 'passType' => $row["Pass_type"], 'region' => $row["State"], 'games' => $games);
+      $registrant = array('gamertag' => $row["Gamertag"], 'passType' => $row["Pass_type"], 'region' => $row["State"], 'games' => $games, 's2Notes' => $s2Notes, 's4Notes' => $s4Notes);
 
       array_push($registrants, $registrant);
 

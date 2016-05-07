@@ -28,7 +28,7 @@
       <p class="text-center">Automatically updated list of people who have <a href="/registration.html">registered for OHN14</a>.
         <br/>
         Please <a href="/index.html#contact">contact us</a> if you've registered but can't see your name on this list.
-      </p> 
+      </p>
     </div>
   </div>
 
@@ -103,9 +103,13 @@
                     <span class="game-name" if.bind="registrant.games.mkRegistered">MKX</span>
                     <span class="game-name" if.bind="registrant.games.a1Registered">VF5FS</span>
                     <span class="game-name" if.bind="registrant.games.s1Registered">SSBM Singles</span>
-                    <span class="game-name" if.bind="registrant.games.s2Registered">SSBM Doubles</span>
+                    <span class="game-name" if.bind="registrant.games.s2Registered">SSBM Doubles
+                        <span if.bind="registrant.s2Notes != ''"> (with ${registrant.s2Notes})</span>
+                    </span>
                     <span class="game-name" if.bind="registrant.games.s3Registered">SSB4 Singles</span>
-                    <span class="game-name" if.bind="registrant.games.s4Registered">SSB4 Doubles</span>
+                    <span class="game-name" if.bind="registrant.games.s4Registered">SSB4 Doubles
+                      <span if.bind="registrant.s4Notes != ''"> (with ${registrant.s4Notes})</span>
+                    </span>
                   </div>
                 </td>
             </tr>

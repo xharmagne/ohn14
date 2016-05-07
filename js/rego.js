@@ -8,6 +8,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
     that.http = $http;
     that.anchorScroll = $anchorScroll;
     that.currentRegistrantForAgeCheck = null;
+    that.scope.currentRegistrantForS2 = null;
+    that.scope.currentRegistrantForS4 = null;
 
     that.passTypes = [{ type: "Competitor", description: "Competitor pass", price: 50 },
                       { type: "Spectator", description: "Spectator pass", price: 10 },
@@ -152,6 +154,10 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.a2 = false;
         registrant.s1 = false;
         registrant.s2 = false;
+        registrant.s3 = false;
+        registrant.s4 = false;
+        registrant.s2Notes = "";
+        registrant.s4Notes = "";
         registrant.isCollapsed = false;
 
         registrant.sfRegistered = false;
@@ -209,6 +215,11 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.mk = false;
         registrant.a1 = false;
         registrant.a2 = false;
+        registrant.s1 = false;
+        registrant.s2 = false;
+        registrant.s3 = false;
+        registrant.s4 = false;
+        registrant.shirt = false;
         registrant.sfRegistered = false;
         registrant.tkRegistered = false;
         registrant.mkRegistered = false;
@@ -216,6 +227,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.a2Registered = false;
         registrant.s1Registered = false;
         registrant.s2Registered = false;
+        registrant.s3Registered = false;
+        registrant.s4Registered = false;
         registrant.shirtRegistered = false;
         registrant.shirtSize = "M";
     };
@@ -260,6 +273,34 @@ function RegoController($scope, $http, $anchorScroll, $window) {
     that.scope.competitorPassSelected = function (registrant) {
         that.scope.resetGamesSelected(registrant);
     };
+
+    that.scope.s2SelectionChanged = function (registrant) {
+
+        if (registrant.s2) {
+            that.scope.currentRegistrantForS2 = registrant;
+            $('#s2Dialog').foundation('reveal', 'open');
+        }
+    };
+
+    that.scope.closeS2Dialog = function () {
+
+        $('#s2Dialog').foundation('reveal', 'close');
+
+    }
+
+    that.scope.s4SelectionChanged = function (registrant) {
+
+        if (registrant.s4) {
+            that.scope.currentRegistrantForS4 = registrant;
+            $('#s4Dialog').foundation('reveal', 'open');
+        }
+    };
+
+    that.scope.closeS4Dialog = function () {
+
+        $('#s4Dialog').foundation('reveal', 'close');
+
+    }
 
     that.scope.mkxSelectionChanged = function (registrant) {
 

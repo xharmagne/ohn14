@@ -20,5 +20,7 @@ CREATE TABLE IF NOT EXISTS `ohn14_registrants` (
   `Payer_ID` varchar(100) NULL,
   `Payment_date` varchar(100) NULL,
   `Registration_date` varchar(100) NULL,
-  `Shirt_size` varchar(5) NULL
+  `Shirt_size` varchar(100) NULL,
+  `S2_Notes` varchar(300) NULL,
+  `S4_Notes` varchar(300) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
