@@ -182,11 +182,12 @@
                                     <div class="form-field small-12 medium-3 columns">
                                         <label>
                                             Email
-                                            <input name="email" type="email" ng-model="registrant.email" ng-required="registrant.type == 'Competitor' || registrant.type == 'Spectator'" maxlength="100" />
+                                            <input name="email" type="email" ng-model="registrant.email" ng-required="registrant.type == 'Competitor' || registrant.type == 'Spectator'" maxlength="100"
+                                                   pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}"/>
                                         </label>
                                         <div ng-show="validationFailed || registrantForm.email.$touched">
                                             <span class="error" ng-show="registrantForm.email.$error.required">Please enter your email address</span>
-                                            <span class="error" ng-show="!registrantForm.email.$error.required && registrantForm.email.$error.email">This is not a valid email address</span>
+                                            <span class="error" ng-show="!registrantForm.email.$error.required && (registrantForm.email.$error.email || registrantForm.email.$error.pattern)">Please enter a valid email address</span>
                                         </div>
                                     </div>
                                     <div class="form-field small-12 medium-3 columns end">
