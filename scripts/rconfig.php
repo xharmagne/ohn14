@@ -9,9 +9,9 @@
 //define('DB_TABLE', 'ohn14_registrants');
 
 //define('PP_ENDPOINT', 'https://api-3t.paypal.com/nvp');
-//define('PP_USERNAME', 'xharmagne_api1.gmail.com');
-//define('PP_PASSWORD', '8UDJGE8ELTEXZCUV');
-//define('PP_SIGNATURE', 'AFcWxV21C7fd0v3bYYYRCpSSRl31A.a1LRIyjOhMwVCqCeUPSzWmPn0f');
+//define('PP_USERNAME', 'payments_api1.ozhadou.net');
+//define('PP_PASSWORD', 'V59R7PP2B8Z4XK7D');
+//define('PP_SIGNATURE', 'AkzEqq5AK1-cm9aSYar6sTqhlu-FA7wB-tgogq7.pLA-iBaTkXwz-GqF');
 
 //define('SUCCESS_URL', 'http://ohn.ozhadou.net/confirmed.html');
 //define('CANCEL_URL', 'http://ohn.ozhadou.net/cancelled.html');
