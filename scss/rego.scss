@@ -221,6 +221,12 @@ form {
         margin-bottom: 0;
     }
 
+    select:disabled {
+        background-color: #fcfcfc;
+        border-color: #f1f1f1;
+        color: #cacaca;
+    }
+
     .form-field {
         margin-bottom: 0.5rem;
     }
