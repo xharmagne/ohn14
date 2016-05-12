@@ -322,6 +322,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
 
     that.scope.register = function (paymentId, onSuccess) {
 
+        that.scope.registrationFailed = false;
+
         if (!paymentId) {
             paymentId = "TEST";
         }
@@ -345,6 +347,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                 onSuccess();
             }
         }).error(function () {
+            that.scope.isBusy = false;
+            that.scope.registrationFailed = true;
         });
 
     };

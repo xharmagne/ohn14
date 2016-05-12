@@ -141,14 +141,14 @@ $query .= $updatequery;
 
 error_log("Register:".$query);
 
-$result = $query;
+$result = "";
 
 if ($mysqli->multi_query($query)) {
+  header('HTTP/1.1 200 OK');
   $result .= $mysqli->affected_rows;
 } else {
+  header('HTTP/1.1 500 Internal Server Error');
   $result .= $mysqli->error;
-
-  error_log($result, 0);
 }
 
 $mysqli->close();

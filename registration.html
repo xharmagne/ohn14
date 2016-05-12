@@ -464,13 +464,20 @@
                     </div>
                 </div>
 
+
                 <!-- ACTIONS -->
                 <div class="buttons-section form-section full-width">
                   <div class="row content-width">
-                    <div class="small-12 medium-9 small-text-center medium-text-left columns end " style="margin-bottom: 1.5rem;">
+                    <div class="small-12 medium-9 small-text-left medium-text-left columns end" style="margin-bottom: 1.5rem;">
                       <p style="font-size: 0.8rem; margin-bottom: 0.3rem;">Please note that by registering for this event:</p>
                       <p style="font-size: 0.8rem;margin-bottom: 0.3rem;">1) you agree to follow the <a href="/#rules" target="_blank">rules and regulations for OHN</a> as they appear on the OHN website and</p>
                       <p style="font-size: 0.8rem;margin-bottom: 0.4rem;">2) you agree that OzHadou may take photographs and film footage of you at the above event, and may use the photographs and/or film footage for OzHadou's promotional and/or commercial purposes, including for use on the OzHadou website and Facebook page.  </p>
+                    </div>
+                  </div>
+                  <!-- ERROR -->
+                  <div class="error-section form-section full-width" ng-show="registrationFailed" style="padding-bottom: 1rem;">
+                    <div>
+                        <span class="error" style="background-color: #ffe27f; color: black;">Unable to process registration, please try again or <a href="/#contact" target="_blank">contact us</a></span>
                     </div>
                   </div>
                   <div class="row content-width">

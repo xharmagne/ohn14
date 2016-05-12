@@ -73,7 +73,7 @@ if ($qryresult = $mysqli->query($query)) {
   }
 
   $result = json_encode($registrants);
-  error_log("Reegistrants:".$result);
+  //error_log("Registrants:".$result);
 }
 
 
