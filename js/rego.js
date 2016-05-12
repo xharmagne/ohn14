@@ -413,8 +413,8 @@ function RegoController($scope, $http, $anchorScroll, $window) {
             // Store registrants data in database
             that.scope.register(paymentId, function () {
 
-                var redirectUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" + paymentId;
-                //var redirectUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" + paymentId;
+                //var redirectUrl = "https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" + paymentId;
+                var redirectUrl = "https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=" + paymentId;
 
                 // Redirect to approval URL
                 // After user approves payment on Paypal, Paypal will redirect to redirect URL

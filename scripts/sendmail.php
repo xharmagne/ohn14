@@ -43,7 +43,7 @@ function send_mail($toName, $toAddress, $subject, $body, $plainBody) {
   $mail->isHTML(true);
 
   //Mail content
-  $mail->Subject = $subject." [TEST]";
+  $mail->Subject = $subject;
   $mail->Body = $body;
   $mail->AltBody = $plainBody;
 

@@ -31,7 +31,7 @@ System.register(['aurelia-framework', 'aurelia-fetch-client', 'fetch'], function
           this.games = [{ value: "", name: "All" }, { value: "SF", name: "SFV" }, { value: "TK", name: "TK7" }, { value: "MK", name: "MKX" }, { value: "A1", name: "VF5FS" }, { value: "S1", name: "Smash Melee Singles" }, { value: "S2", name: "Smash Melee Doubles" }, { value: "S3", name: "Smash Wii U Singles" }, { value: "S4", name: "Smash Wii U Doubles" }];
 
           http.configure(function (config) {
-            config.useStandardConfiguration().withBaseUrl('http://dev.ozhadou.net/scripts/');
+            config.useStandardConfiguration().withBaseUrl('http://ohn.ozhadou.net/scripts/');
           });
 
           this.http = http;

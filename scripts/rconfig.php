@@ -2,35 +2,35 @@
 
 
 ////////////// Live /////////////////////////////
-//define('DB_NAME', 'db_ohn');
-//define('DB_USER', 'dbu_ohn');
-//define('DB_PASSWORD', 'oZh@dou!2016');
-//define('DB_HOST', 'localhost');
-//define('DB_TABLE', 'ohn14_registrants');
-
-//define('PP_ENDPOINT', 'https://api-3t.paypal.com/nvp');
-//define('PP_USERNAME', 'payments_api1.ozhadou.net');
-//define('PP_PASSWORD', 'V59R7PP2B8Z4XK7D');
-//define('PP_SIGNATURE', 'AkzEqq5AK1-cm9aSYar6sTqhlu-FA7wB-tgogq7.pLA-iBaTkXwz-GqF');
-
-//define('SUCCESS_URL', 'http://ohn.ozhadou.net/confirmed.html');
-//define('CANCEL_URL', 'http://ohn.ozhadou.net/cancelled.html');
-
-
-////////////// Dev /////////////////////////////
 define('DB_NAME', 'db_ohn');
 define('DB_USER', 'dbu_ohn');
 define('DB_PASSWORD', 'oZh@dou!2016');
 define('DB_HOST', 'localhost');
 define('DB_TABLE', 'ohn14_registrants');
 
-define('PP_ENDPOINT', 'https://api-3t.sandbox.paypal.com/nvp');
-define('PP_USERNAME', 'xharmagne-facilitator_api1.gmail.com');
-define('PP_PASSWORD', 'LDSS9H6VZC8S64HM');
-define('PP_SIGNATURE', 'AFcWxV21C7fd0v3bYYYRCpSSRl31ANN.4RqUbKQjewlZziXScTSbadeO');
+define('PP_ENDPOINT', 'https://api-3t.paypal.com/nvp');
+define('PP_USERNAME', 'payments_api1.ozhadou.net');
+define('PP_PASSWORD', 'V59R7PP2B8Z4XK7D');
+define('PP_SIGNATURE', 'AkzEqq5AK1-cm9aSYar6sTqhlu-FA7wB-tgogq7.pLA-iBaTkXwz-GqF');
 
-define('SUCCESS_URL', 'http://dev.ozhadou.net/confirmed.html');
-define('CANCEL_URL', 'http://dev.ozhadou.net/cancelled.html');
+define('SUCCESS_URL', 'http://ohn.ozhadou.net/confirmed.html');
+define('CANCEL_URL', 'http://ohn.ozhadou.net/cancelled.html');
+
+
+////////////// Dev /////////////////////////////
+//define('DB_NAME', 'db_ohn');
+//define('DB_USER', 'dbu_ohn');
+//define('DB_PASSWORD', 'oZh@dou!2016');
+//define('DB_HOST', 'localhost');
+//define('DB_TABLE', 'ohn14_registrants');
+
+//define('PP_ENDPOINT', 'https://api-3t.sandbox.paypal.com/nvp');
+//define('PP_USERNAME', 'xharmagne-facilitator_api1.gmail.com');
+//define('PP_PASSWORD', 'LDSS9H6VZC8S64HM');
+//define('PP_SIGNATURE', 'AFcWxV21C7fd0v3bYYYRCpSSRl31ANN.4RqUbKQjewlZziXScTSbadeO');
+
+//define('SUCCESS_URL', 'http://dev.ozhadou.net/confirmed.html');
+//define('CANCEL_URL', 'http://dev.ozhadou.net/cancelled.html');
 
 
 ////////////// Local /////////////////////////////
