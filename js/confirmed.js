@@ -16,7 +16,7 @@ function ConfirmedController($scope, $http, $window, $location) {
             that.scope.isPaymentSuccessful = false;
             that.scope.isPaymentFailed = false;
         });
-        
+
         var qParams = that.location.search();
         var payerId = qParams.PayerID;
         var paymentId = qParams.token;
@@ -86,17 +86,17 @@ function ConfirmedController($scope, $http, $window, $location) {
 
             $http(paidReq).success(function (response) {
                 that.scope.isBusy = false;
-                that.scope.isPaymentSuccessful = true;
+                that.scope.isPaymentFailed = true;
             }).error(function () {
                 that.scope.isBusy = false;
                 that.scope.isPaymentFailed = true;
             });
-            
+
         });
 
     };
 
-    
+
     //taken from https://coderwall.com/p/ngisma
     that.scope.safeApply = function (fn) {
         var phase = this.$root.$$phase;

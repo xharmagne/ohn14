@@ -65,6 +65,7 @@ else {
   else {
     parse_str($execResult, $exresult_array);
     $execStatus = $exresult_array['ACK'];
+    error_log("DoExpressCheckoutPayment:".$execStatus);
 
     if ($execStatus != "Success") {
       header('HTTP/1.1 500 Internal Server Error');
