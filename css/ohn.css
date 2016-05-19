@@ -86,7 +86,7 @@ a:hover {
 .main-info {
   background-image: url(../img/swirl.svg);
   background-size: 2000px 450px;
-  height: 450px;
+  height: 520px;
   background-repeat: no-repeat;
   position: relative;
   top: -273px;
@@ -141,6 +141,10 @@ a:hover {
 }
 
 @media only screen and (min-width:40.063em) {
+
+  .main-info {
+    height: 490px;
+  }
 
   .main-info-content .venue {
       font-size: 1.45rem;
