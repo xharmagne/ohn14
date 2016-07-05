@@ -78,6 +78,62 @@ if ($mysqli->multi_query($query)) {
         $games .= "SSB4 Doubles".$partnerb." | ";
         $note = "Please notify us of any changes to Doubles teams via email at <a href=\"mailto:ohnsmash@ozhadou.net\">ohnsmash@ozhadou.net</a><br/>";
        }
+
+       if ($row["DIY1"]) {
+        $games .= "ST | ";
+       }
+
+       if ($row["DIY2"]) {
+        $games .= "3S | ";
+       }
+
+       if ($row["DIY3"]) {
+        $games .= "UMVC3 | ";
+       }
+
+       if ($row["DIY4"]) {
+        $games .= "KOF02UM | ";
+       }
+
+       if ($row["DIY5"]) {
+        $games .= "KOF98UM | ";
+       }
+
+       if ($row["DIY6"]) {
+        $games .= "GGXrd | ";
+       }
+
+       if ($row["DIY7"]) {
+        $games .= "P4AU | ";
+       }
+
+       if ($row["DIY8"]) {
+        $games .= "POK | ";
+       }
+
+       if ($row["DIY9"]) {
+        $games .= "SSB64 | ";
+       }
+
+       if ($row["DIY10"]) {
+         $partnerc = "";
+         if (!empty($row["DIY10_Notes"])) {
+           $partnerc =  " (with ".$row["DIY10_Notes"].")";
+         }
+
+        $games .= "PM Doubles".$partnerc." | ";
+        $note = "Please notify us of any changes to Doubles teams via email at <a href=\"mailto:ohnsmash@ozhadou.net\">ohnsmash@ozhadou.net</a><br/>";
+       }
+
+       if ($row["DIY11"]) {
+        $games .= "X | ";
+       }
+
+       if ($row["DIY12"]) {
+        $games .= "X | ";
+       }
+
+
        if (!empty($row["Shirt_size"])) {
          $shirt = "Size ".$row["Shirt_size"];
        }

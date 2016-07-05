@@ -15,7 +15,10 @@ $count = count($registrants);
 $insertcount = 0;
 $insertquery =
   "insert into `" . DB_TABLE . "` (`Gamertag`, `Pass_type`, `First_name`, `Last_name`, `Email`, `Contact_number`, `State`,
-                                    `SF`, `TK`, `MK`, `A1`, `A2`, `S1`, `S2`, `S3`, `S4`, `Shirt_size`, `S2_Notes`, `S4_Notes`,
+                                    `SF`, `TK`, `MK`, `A1`, `A2`, `S1`, `S2`, `S3`, `S4`,
+                                    `DIY1`, `DIY2`, `DIY3`, `DIY4`, `DIY5`, `DIY6`,
+                                    `DIY7`, `DIY8`, `DIY9`, `DIY10`, `DIY11`, `DIY12`,
+                                    `Shirt_size`, `S2_Notes`, `S4_Notes`, `DIY10_Notes`
                                     `Payment_ID`, `Payment_status`, `Registration_date`) values ";
 
 $updatequery = "";
@@ -38,6 +41,7 @@ for ($i=0; $i < $count; $i++) {
   $shirtsize = "";
   $s2Notes = "";
   $s4Notes = "";
+  $diy10Notes = "";
   if ($registrants[$i]->shirt) {
     $shirtsize = $mysqli->real_escape_string($registrants[$i]->shirtSize);
   }
@@ -50,6 +54,10 @@ for ($i=0; $i < $count; $i++) {
     $s4Notes = $mysqli->real_escape_string($registrants[$i]->s4Notes);
   }
 
+  if ($registrants[$i]->diy10 && $registrants[$i]->diy10Notes) {
+    $diy10Notes = $mysqli->real_escape_string($registrants[$i]->diy10Notes);
+  }
+
   $sf = "false";
   $tk = "false";
   $mk  = "false";
@@ -59,6 +67,18 @@ for ($i=0; $i < $count; $i++) {
   $s2  = "false";
   $s3  = "false";
   $s4  = "false";
+  $diy1  = "false";
+  $diy2  = "false";
+  $diy3  = "false";
+  $diy4  = "false";
+  $diy5  = "false";
+  $diy6  = "false";
+  $diy7  = "false";
+  $diy8  = "false";
+  $diy9  = "false";
+  $diy10  = "false";
+  $diy11  = "false";
+  $diy12  = "false";
 
   if ($passtype != "Spectator") {
     $sf = ($registrants[$i]->sf) ? "true" : "false";
@@ -70,12 +90,27 @@ for ($i=0; $i < $count; $i++) {
     $s2  = ($registrants[$i]->s2) ? "true" : "false";
     $s3  = ($registrants[$i]->s3) ? "true" : "false";
     $s4  = ($registrants[$i]->s4) ? "true" : "false";
+    $diy1  = ($registrants[$i]->diy1) ? "true" : "false";
+    $diy2  = ($registrants[$i]->diy2) ? "true" : "false";
+    $diy3  = ($registrants[$i]->diy3) ? "true" : "false";
+    $diy4  = ($registrants[$i]->diy4) ? "true" : "false";
+    $diy5  = ($registrants[$i]->diy5) ? "true" : "false";
+    $diy6  = ($registrants[$i]->diy6) ? "true" : "false";
+    $diy7  = ($registrants[$i]->diy7) ? "true" : "false";
+    $diy8  = ($registrants[$i]->diy8) ? "true" : "false";
+    $diy9  = ($registrants[$i]->diy9) ? "true" : "false";
+    $diy10  = ($registrants[$i]->diy10) ? "true" : "false";
+    $diy11  = ($registrants[$i]->diy11) ? "true" : "false";
+    $diy12  = ($registrants[$i]->diy12) ? "true" : "false";
   }
 
   if ($passtype != "AddGames") {
 
     $insertquery .= "('$gamertag', '$passtype', '$firstname', '$lastname', '$email', '$contactnumber', '$state',
-                      $sf, $tk, $mk, $a1, $a2, $s1, $s2, $s3, $s4, '$shirtsize', '$s2Notes', '$s4Notes',
+                      $sf, $tk, $mk, $a1, $a2, $s1, $s2, $s3, $s4,
+                      $diy1, $diy2, $diy3, $diy4, $diy5, $diy6,
+                      $diy7, $diy8, $diy9, $diy10, $diy11, $diy12,
+                      '$shirtsize', '$s2Notes', '$s4Notes', $diy10Notes,
                       '$paymentId', 'Pending', '$d'), ";
 
     $insertcount = $insertcount + 1;
@@ -119,6 +154,54 @@ for ($i=0; $i < $count; $i++) {
     if ($registrants[$i]->s4) {
      $updatequery .= "update `" . DB_TABLE . "` set `S4` = true, `S4_Notes` = '$s4Notes' where `Gamertag` = '$gamertag'; ";
      $status .= "S4";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY1` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY1";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY2` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY2";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY3` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY3";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY4` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY4";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY5` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY5";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY6` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY6";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY7` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY7";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY8` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY8";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY9` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY9";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY10` = true, `DIY10_Notes` = '$diy10Notes' where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY10";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY11` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY11";
+    }
+    if ($registrants[$i]->diy1) {
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY12` = true where `Gamertag` = '$gamertag'; ";
+     $status .= "DIY12";
     }
     if ($registrants[$i]->shirt) {
      $updatequery .= "update `" . DB_TABLE . "` set `Shirt_size` = '$shirtsize' where `Gamertag` = '$gamertag'; ";

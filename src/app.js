@@ -36,7 +36,17 @@ export class App {
       {value: "S1", name: "Smash Melee Singles"},
       {value: "S2", name: "Smash Melee Doubles"},
       {value: "S3", name: "Smash Wii U Singles"},
-      {value: "S4", name: "Smash Wii U Doubles"}
+      {value: "S4", name: "Smash Wii U Doubles"},
+      {value: "DIY1", name: "Super Street Fighter II Turbo"},
+      {value: "DIY2", name: "Street Fighter III: 3rd Strike"},
+      {value: "DIY3", name: "Ultimate Marvel vs. Capcom 3"},
+      {value: "DIY4", name: "The King of Fighters 2002: Unlimited Match"},
+      {value: "DIY5", name: "The King of Fighters 98: Unlimited Match Final Edition"},
+      {value: "DIY6", name: "Guilty Gear Xrd -REVELATOR-"},
+      {value: "DIY7", name: "Persona 4 Arena Ultimax"},
+      {value: "DIY8", name: "Pokken Tournament"},
+      {value: "DIY9", name: "Super Smash Bros. 64"},
+      {value: "DIY10", name: "Project M (Doubles)"}
   ];
 
   constructor(http) {

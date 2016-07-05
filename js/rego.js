@@ -10,6 +10,7 @@ function RegoController($scope, $http, $anchorScroll, $window) {
     that.currentRegistrantForAgeCheck = null;
     that.scope.currentRegistrantForS2 = null;
     that.scope.currentRegistrantForS4 = null;
+    that.scope.currentRegistrantForDIY10 = null;
 
     that.passTypes = [{ type: "Competitor", description: "Competitor pass", price: 50 },
                       { type: "Spectator", description: "Spectator pass", price: 10 },
@@ -23,7 +24,19 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                   { code: "S1", description: "Super Smash Bros. Melee (Singles) tournament entry", price: 10 },
                   { code: "S2", description: "Super Smash Bros. Melee (Doubles) tournament entry", price: 10 },
                   { code: "S3", description: "Super Smash Bros. for Wii U (Singles) tournament entry", price: 10 },
-                  { code: "S4", description: "Super Smash Bros. for Wii U (Doubles) tournament entry", price: 10 }];
+                  { code: "S4", description: "Super Smash Bros. for Wii U (Doubles) tournament entry", price: 10 },
+                  { code: "DIY1", description: "Super Street Fighter II Turbo tournament entry", price: 5 },
+                  { code: "DIY2", description: "Street Fighter III: 3rd Strike tournament entry", price: 5 },
+                  { code: "DIY3", description: "Ultimate Marvel vs. Capcom 3 tournament entry", price: 5 },
+                  { code: "DIY4", description: "The King of Fighters 2002: Unlimited Match tournament entry", price: 5 },
+                  { code: "DIY5", description: "The King of Fighters 98: Unlimited Match Final Edition tournament entry", price: 5 },
+                  { code: "DIY6", description: "Guilty Gear Xrd -REVELATOR- tournament entry", price: 5 },
+                  { code: "DIY7", description: "Persona 4 Arena Ultimax tournament entry", price: 5 },
+                  { code: "DIY8", description: "Pokken Tournament tournament entry", price: 5 },
+                  { code: "DIY9", description: "Super Smash Bros. 64 tournament entry", price: 5 },
+                  { code: "DIY10", description: "Project M (Doubles) tournament entry", price: 5 },
+                  { code: "DIY11", description: "Other DIY tournament entry", price: 5 },
+                  { code: "DIY12", description: "Other DIY tournament entry", price: 5 }];
 
     that.init = function () {
         that.scope.safeApply(function () {
@@ -85,7 +98,19 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                            (r.s1 && g.code == "S1") ||
                            (r.s2 && g.code == "S2") ||
                            (r.s3 && g.code == "S3") ||
-                           (r.s4 && g.code == "S4");
+                           (r.s4 && g.code == "S4") ||
+                           (r.diy1 && g.code == "DIY1") ||
+                           (r.diy2 && g.code == "DIY2") ||
+                           (r.diy3 && g.code == "DIY3") ||
+                           (r.diy4 && g.code == "DIY4") ||
+                           (r.diy5 && g.code == "DIY5") ||
+                           (r.diy6 && g.code == "DIY6") ||
+                           (r.diy7 && g.code == "DIY7") ||
+                           (r.diy8 && g.code == "DIY8") ||
+                           (r.diy9 && g.code == "DIY9") ||
+                           (r.diy10 && g.code == "DIY10") ||
+                           (r.diy11 && g.code == "DIY11") ||
+                           (r.diy12 && g.code == "DIY12");
                 });
 
                 gameTypeMatches.forEach(function (g) {
@@ -147,29 +172,9 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.contactNumber = "";
         registrant.state = "";
         registrant.otherLocation = "";
-        registrant.sf = false;
-        registrant.tk = false;
-        registrant.mk = false;
-        registrant.a1 = false;
-        registrant.a2 = false;
-        registrant.s1 = false;
-        registrant.s2 = false;
-        registrant.s3 = false;
-        registrant.s4 = false;
-        registrant.s2Notes = "";
-        registrant.s4Notes = "";
         registrant.isCollapsed = false;
 
-        registrant.sfRegistered = false;
-        registrant.tkRegistered = false;
-        registrant.mkRegistered = false;
-        registrant.a1Registered = false;
-        registrant.a2Registered = false;
-        registrant.s1Registered = false;
-        registrant.s2Registered = false;
-
-        registrant.shirt = false;
-        registrant.shirtSize = "M";
+        that.scope.resetGamesSelected(registrant);
 
         registrant.items = [];
         registrant.total = 0;
@@ -219,7 +224,22 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.s2 = false;
         registrant.s3 = false;
         registrant.s4 = false;
-        registrant.shirt = false;
+        registrant.diy1 = false;
+        registrant.diy2 = false;
+        registrant.diy3 = false;
+        registrant.diy4 = false;
+        registrant.diy5 = false;
+        registrant.diy6 = false;
+        registrant.diy7 = false;
+        registrant.diy8 = false;
+        registrant.diy9 = false;
+        registrant.diy10 = false;
+        registrant.diy11 = false;
+        registrant.diy12 = false;
+        registrant.s2Notes = "";
+        registrant.s4Notes = "";
+        registrant.diy10tes = "";
+
         registrant.sfRegistered = false;
         registrant.tkRegistered = false;
         registrant.mkRegistered = false;
@@ -229,6 +249,20 @@ function RegoController($scope, $http, $anchorScroll, $window) {
         registrant.s2Registered = false;
         registrant.s3Registered = false;
         registrant.s4Registered = false;
+        registrant.diy1Registered = false;
+        registrant.diy2Registered = false;
+        registrant.diy3Registered = false;
+        registrant.diy4Registered = false;
+        registrant.diy5Registered = false;
+        registrant.diy6Registered = false;
+        registrant.diy7Registered = false;
+        registrant.diy8Registered = false;
+        registrant.diy9Registered = false;
+        registrant.diy10Registered = false;
+        registrant.diy11Registered = false;
+        registrant.diy12Registered = false;
+
+        registrant.shirt = false;
         registrant.shirtRegistered = false;
         registrant.shirtSize = "M";
     };
@@ -259,6 +293,18 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                     registrant.s2Registered = data.s2Registered == true;
                     registrant.s3Registered = data.s3Registered == true;
                     registrant.s4Registered = data.s4Registered == true;
+                    registrant.diy1Registered = data.diy1Registered == true;
+                    registrant.diy2Registered = data.diy2Registered == true;
+                    registrant.diy3Registered = data.diy3Registered == true;
+                    registrant.diy4Registered = data.diy4Registered == true;
+                    registrant.diy5Registered = data.diy5Registered == true;
+                    registrant.diy6Registered = data.diy6Registered == true;
+                    registrant.diy7Registered = data.diy7Registered == true;
+                    registrant.diy8Registered = data.diy8Registered == true;
+                    registrant.diy9Registered = data.diy9Registered == true;
+                    registrant.diy10Registered = data.diy10Registered == true;
+                    registrant.diy11Registered = data.diy11Registered == true;
+                    registrant.diy12Registered = data.diy12Registered == true;
                     registrant.shirtRegistered = data.shirtRegistered == true;
                     if (data.shirtSize) {
                       registrant.shirtSize = data.shirtSize;
@@ -295,6 +341,20 @@ function RegoController($scope, $http, $anchorScroll, $window) {
             $('#s4Dialog').foundation('reveal', 'open');
         }
     };
+
+    that.scope.diy10SelectionChanged = function (registrant) {
+
+        if (registrant.diy10) {
+            that.scope.currentRegistrantForDIY10 = registrant;
+            $('#diy10Dialog').foundation('reveal', 'open');
+        }
+    };
+
+    that.scope.closeDIY10Dialog = function () {
+
+        $('#diy10Dialog').foundation('reveal', 'close');
+
+    }
 
     that.scope.closeS4Dialog = function () {
 

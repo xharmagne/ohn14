@@ -15,6 +15,18 @@ CREATE TABLE IF NOT EXISTS `ohn14_registrants` (
   `S2` tinyint(1) NOT NULL,
   `S3` tinyint(1) NOT NULL,
   `S4` tinyint(1) NOT NULL,
+  `DIY1`tinyint(1) NOT NULL,
+  `DIY2`tinyint(1) NOT NULL,
+  `DIY3`tinyint(1) NOT NULL,
+  `DIY4`tinyint(1) NOT NULL,
+  `DIY5`tinyint(1) NOT NULL,
+  `DIY6`tinyint(1) NOT NULL,
+  `DIY7`tinyint(1) NOT NULL,
+  `DIY8`tinyint(1) NOT NULL,
+  `DIY9`tinyint(1) NOT NULL,
+  `DIY10`tinyint(1) NOT NULL,
+  `DIY11`tinyint(1) NOT NULL,
+  `DIY12`tinyint(1) NOT NULL,
   `Payment_ID` varchar(100) NULL,
   `Payment_status` varchar(100) NULL,
   `Payer_ID` varchar(100) NULL,
@@ -22,5 +34,6 @@ CREATE TABLE IF NOT EXISTS `ohn14_registrants` (
   `Registration_date` varchar(100) NULL,
   `Shirt_size` varchar(100) NULL,
   `S2_Notes` varchar(300) NULL,
-  `S4_Notes` varchar(300) NULL
+  `S4_Notes` varchar(300) NULL,
+  `DIY10_Notes` varchar(300) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

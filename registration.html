@@ -350,7 +350,7 @@
                                             <div class="game-button-container" style="display:none">
                                                 <input type="checkbox" disabled ng-model="registrant.a2" id="chkA2-{{ registrant.index }}" class="ui-helper-hidden-accessible">
                                                 <label for="chkA2-{{ registrant.index }}" ng-class="registrant.a2 == true ? 'active' : ''" class="game-button button">
-                                                    <img src="img/gamelogo-a2-white.png" />
+                                                    <!--img src="img/gamelogo-a2-white.png" /-->
                                                     <span class="button-text price">$10</span>
                                                 </label>
                                                 <span class="game-warning" ng-show="registrant.a2Registered">Already registered</span>
@@ -359,6 +359,146 @@
                                     </ul>
                                 </div>
                             </div>
+
+                            <div class="row content-width">
+                                <div class="small-12 small-centered medium-uncentered medium-8 columns end">
+                                    <ul class="game-select-grid small-block-grid-2 medium-block-grid-3 large-block-grid-3">
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy1" id="chkDIY1-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy1Registered">
+                                                <label for="chkDIY1-{{ registrant.index }}" ng-class="registrant.diy1 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy1-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy1Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy2" id="chkDIY2-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy2Registered">
+                                                <label for="chkDIY2-{{ registrant.index }}" ng-class="registrant.diy2 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy2-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy2Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy3" id="chkDIY3-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy3Registered">
+                                                <label for="chkDIY3-{{ registrant.index }}" ng-class="registrant.diy3 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy3-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy3Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy4" id="chkDIY4-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy4Registered">
+                                                <label for="chkDIY4-{{ registrant.index }}" ng-class="registrant.diy4 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy4-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy4Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy5" id="chkDIY5-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy5Registered">
+                                                <label for="chkDIY5-{{ registrant.index }}" ng-class="registrant.diy5 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy5-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy5Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy6" id="chkDIY6-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy6Registered">
+                                                <label for="chkDIY6-{{ registrant.index }}" ng-class="registrant.diy6 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy6-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy6Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy7" id="chkDIY7-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy7Registered">
+                                                <label for="chkDIY7-{{ registrant.index }}" ng-class="registrant.diy7 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy7-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy7Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy8" id="chkDIY8-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy8Registered">
+                                                <label for="chkDIY8-{{ registrant.index }}" ng-class="registrant.diy8 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy8-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy8Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy9" id="chkDIY9-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy9Registered">
+                                                <label for="chkDIY9-{{ registrant.index }}" ng-class="registrant.diy9 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy9-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy9Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container">
+                                                <input type="checkbox" ng-model="registrant.diy10" id="chkDIY10-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy10Registered">
+                                                <label for="chkDIY10-{{ registrant.index }}" ng-class="registrant.diy10 == true ? 'active' : ''" class="game-button button">
+                                                    <img src="img/gamelogo-diy10-white.png" />
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy10Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container" style="display:none">
+                                                <input type="checkbox" ng-model="registrant.diy11" id="chkDIY11-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy11Registered">
+                                                <label for="chkDIY11-{{ registrant.index }}" ng-class="registrant.diy11 == true ? 'active' : ''" class="game-button button">
+                                                    <!--img src="img/gamelogo-diy11-white.png" /-->
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy11Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="game-button-container" style="display:none">
+                                                <input type="checkbox" ng-model="registrant.diy12" id="chkDIY12-{{ registrant.index }}" class="ui-helper-hidden-accessible"
+                                                       ng-disabled="registrant.diy12Registered">
+                                                <label for="chkDIY12-{{ registrant.index }}" ng-class="registrant.diy12 == true ? 'active' : ''" class="game-button button">
+                                                    <!--img src="img/gamelogo-diy12-white.png" /-->
+                                                    <span class="button-text price">$5</span>
+                                                </label>
+                                                <span class="game-warning" ng-show="registrant.diy12Registered">Already registered</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div class="slide-from-top merchandise-section form-section full-width" ng-hide="registrant.type == ''">
@@ -541,6 +681,15 @@
             <button ng-click="closeS4Dialog()">Okay</button>
         </div>
 
+        <div id="diy10Dialog" style="text-align:center" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+            <h2 id="modalTitle">Who's your teammate?</h2>
+            <p>If you know who you're teaming up with for <b>Project M Doubles</b>, enter their gamertag below.<br>If you're not sure yet, leave it blank and tell us via email at <a href="mailto:ohnsmash@ozhadou.net">ohnsmash@ozhadou.net</a> when you find out.</p>
+            <label>
+                Gamertag
+                <input name="diy10gamertag" type="text" required="" maxlength="25" ng-model="currentRegistrantForDIY10.diy10Notes" style="margin-right: auto; margin-left: auto; max-width: 200px;" />
+            </label>
+            <button ng-click="closeDIY10Dialog()">Okay</button>
+        </div>
     </div>
 
 

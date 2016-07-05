@@ -24,6 +24,18 @@ if ($qryresult = $mysqli->query($query)) {
       $s2Registered = 0;
       $s3Registered = 0;
       $s4Registered = 0;
+      $diy1Registered = false;
+      $diy2Registered = false;
+      $diy3Registered = false;
+      $diy4Registered = false;
+      $diy5Registered = false;
+      $diy6Registered = false;
+      $diy7Registered = false;
+      $diy8Registered = false;
+      $diy9Registered = false;
+      $diy10Registered = false;
+      $diy11Registered = false;
+      $diy12Registered = false;
       $shirtRegistered = 0;
       $shirtSize = "";
 
@@ -55,6 +67,42 @@ if ($qryresult = $mysqli->query($query)) {
       if ($row["S4"]) {
         $s4Registered = 1;
       }
+      if ($row["DIY1"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY2"]) {
+        $diy2Registered = true;
+      }
+      if ($row["DIY3"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY4"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY5"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY6"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY7"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY8"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY9"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY10"]) {
+        $diy1Registered = true;
+      }
+      if ($row["DIY11"]) {
+        $diy11Registered = true;
+      }
+      if ($row["DIY12"]) {
+        $diy12Registered = true;
+      }
 
       if (!empty($row["Shirt_size"])) {
         $shirtRegistered = 1;
@@ -63,6 +111,8 @@ if ($qryresult = $mysqli->query($query)) {
 
       $arr = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered,
                    's1Registered' => $s1Registered, 's2Registered' => $s2Registered, 's3Registered' => $s3Registered, 's4Registered' => $s4Registered,
+                   'diy1Registered' => $diy1Registered, 'diy2Registered' => $diy2Registered, 'diy3Registered' => $diy3Registered, 'diy4Registered' => $diy4Registered, 'diy5Registered' => $diy5Registered, 'diy6Registered' => $diy6Registered,
+                   'diy7Registered' => $diy7Registered, 'diy8Registered' => $diy8Registered, 'diy9Registered' => $diy9Registered, 'diy10Registered' => $diy10Registered, 'diy11Registered' => $diy11Registered, 'diy12Registered' => $diy12Registered,
                    'shirtRegistered' => $shirtRegistered, 'shirtSize' => $shirtSize);
       $result = json_encode($arr);
 
