@@ -74,28 +74,28 @@ if ($qryresult = $mysqli->query($query)) {
         $diy2Registered = true;
       }
       if ($row["DIY3"]) {
-        $diy1Registered = true;
+        $diy3Registered = true;
       }
       if ($row["DIY4"]) {
-        $diy1Registered = true;
+        $diy4Registered = true;
       }
       if ($row["DIY5"]) {
-        $diy1Registered = true;
+        $diy5Registered = true;
       }
       if ($row["DIY6"]) {
-        $diy1Registered = true;
+        $diy6Registered = true;
       }
       if ($row["DIY7"]) {
-        $diy1Registered = true;
+        $diy7Registered = true;
       }
       if ($row["DIY8"]) {
-        $diy1Registered = true;
+        $diy8Registered = true;
       }
       if ($row["DIY9"]) {
-        $diy1Registered = true;
+        $diy9Registered = true;
       }
       if ($row["DIY10"]) {
-        $diy1Registered = true;
+        $diy10Registered = true;
       }
       if ($row["DIY11"]) {
         $diy11Registered = true;

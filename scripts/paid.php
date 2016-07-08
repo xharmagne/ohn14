@@ -116,13 +116,7 @@ if ($mysqli->multi_query($query)) {
        }
 
        if ($row["DIY10"]) {
-         $partnerc = "";
-         if (!empty($row["DIY10_Notes"])) {
-           $partnerc =  " (with ".$row["DIY10_Notes"].")";
-         }
-
-        $games .= "PM Doubles".$partnerc." | ";
-        $note = "Please notify us of any changes to Doubles teams via email at <a href=\"mailto:ohnsmash@ozhadou.net\">ohnsmash@ozhadou.net</a><br/>";
+         $games .= "PM | ";
        }
 
        if ($row["DIY11"]) {

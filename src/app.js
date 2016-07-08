@@ -46,7 +46,7 @@ export class App {
       {value: "DIY7", name: "Persona 4 Arena Ultimax"},
       {value: "DIY8", name: "Pokken Tournament"},
       {value: "DIY9", name: "Super Smash Bros. 64"},
-      {value: "DIY10", name: "Project M (Doubles)"}
+      {value: "DIY10", name: "Project M"}
   ];
 
   constructor(http) {

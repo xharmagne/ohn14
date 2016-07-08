@@ -34,7 +34,7 @@ function RegoController($scope, $http, $anchorScroll, $window) {
                   { code: "DIY7", description: "Persona 4 Arena Ultimax tournament entry", price: 5 },
                   { code: "DIY8", description: "Pokken Tournament tournament entry", price: 5 },
                   { code: "DIY9", description: "Super Smash Bros. 64 tournament entry", price: 5 },
-                  { code: "DIY10", description: "Project M (Doubles) tournament entry", price: 5 },
+                  { code: "DIY10", description: "Project M tournament entry", price: 5 },
                   { code: "DIY11", description: "Other DIY tournament entry", price: 5 },
                   { code: "DIY12", description: "Other DIY tournament entry", price: 5 }];
 

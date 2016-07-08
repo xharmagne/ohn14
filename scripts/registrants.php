@@ -84,28 +84,28 @@ if ($qryresult = $mysqli->query($query)) {
         $diy2Registered = true;
       }
       if ($row["DIY3"]) {
-        $diy1Registered = true;
+        $diy3Registered = true;
       }
       if ($row["DIY4"]) {
-        $diy1Registered = true;
+        $diy4Registered = true;
       }
       if ($row["DIY5"]) {
-        $diy1Registered = true;
+        $diy5Registered = true;
       }
       if ($row["DIY6"]) {
-        $diy1Registered = true;
+        $diy6Registered = true;
       }
       if ($row["DIY7"]) {
-        $diy1Registered = true;
+        $diy7Registered = true;
       }
       if ($row["DIY8"]) {
-        $diy1Registered = true;
+        $diy8Registered = true;
       }
       if ($row["DIY9"]) {
-        $diy1Registered = true;
+        $diy9Registered = true;
       }
       if ($row["DIY10"]) {
-        $diy1Registered = true;
+        $diy10Registered = true;
 
         if (!empty($row["DIY10_Notes"])) {
           $diy10Notes = $row["DIY10_Notes"];
@@ -119,9 +119,9 @@ if ($qryresult = $mysqli->query($query)) {
       }
 
       $games = array('sfRegistered' => $sfRegistered, 'tkRegistered' => $tkRegistered, 'mkRegistered' => $mkRegistered, 'a1Registered' => $a1Registered, 'a2Registered' => $a2Registered,
-                     's1Registered' => $s1Registered, 's2Registered' => $s2Registered, 's3Registered' => $s3Registered, 's4Registered' => $s4Registered
+                     's1Registered' => $s1Registered, 's2Registered' => $s2Registered, 's3Registered' => $s3Registered, 's4Registered' => $s4Registered,
                      'diy1Registered' => $diy1Registered, 'diy2Registered' => $diy2Registered, 'diy3Registered' => $diy3Registered, 'diy4Registered' => $diy4Registered, 'diy5Registered' => $diy5Registered, 'diy6Registered' => $diy6Registered,
-                     'diy7Registered' => $diy7Registered, 'diy8Registered' => $diy8Registered, 'diy9Registered' => $diy9Registered, 'diy10Registered' => $diy10Registered, 'diy11Registered' => $diy11Registered, 'diy12Registered' => $diy12Registered,
+                     'diy7Registered' => $diy7Registered, 'diy8Registered' => $diy8Registered, 'diy9Registered' => $diy9Registered, 'diy10Registered' => $diy10Registered, 'diy11Registered' => $diy11Registered, 'diy12Registered' => $diy12Registered);
       $registrant = array('gamertag' => $row["Gamertag"], 'passType' => $row["Pass_type"], 'region' => $row["State"], 'games' => $games, 's2Notes' => $s2Notes, 's4Notes' => $s4Notes, 'diy10Notes' => $diy10Notes);
 
       array_push($registrants, $registrant);
