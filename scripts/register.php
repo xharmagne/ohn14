@@ -18,7 +18,7 @@ $insertquery =
                                     `SF`, `TK`, `MK`, `A1`, `A2`, `S1`, `S2`, `S3`, `S4`,
                                     `DIY1`, `DIY2`, `DIY3`, `DIY4`, `DIY5`, `DIY6`,
                                     `DIY7`, `DIY8`, `DIY9`, `DIY10`, `DIY11`, `DIY12`,
-                                    `Shirt_size`, `S2_Notes`, `S4_Notes`, `DIY10_Notes`,
+                                    `Shirt_size`, `S2_Notes`, `S4_Notes`,
                                     `Payment_ID`, `Payment_status`, `Registration_date`) values ";
 
 $updatequery = "";
@@ -110,7 +110,7 @@ for ($i=0; $i < $count; $i++) {
                       $sf, $tk, $mk, $a1, $a2, $s1, $s2, $s3, $s4,
                       $diy1, $diy2, $diy3, $diy4, $diy5, $diy6,
                       $diy7, $diy8, $diy9, $diy10, $diy11, $diy12,
-                      '$shirtsize', '$s2Notes', '$s4Notes', '$diy10Notes',
+                      '$shirtsize', '$s2Notes', '$s4Notes',
                       '$paymentId', 'Pending', '$d'), ";
 
     $insertcount = $insertcount + 1;
