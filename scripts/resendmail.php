@@ -137,6 +137,8 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
                           <br/>
 
+                          %s
+
                           <p style="font-family:Roboto, Verdana;">What to do on entry:</p>
 
                           <ul style="font-family:Roboto, Verdana;">
@@ -144,13 +146,15 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                             <li style="font-family:Roboto, Verdana;">Show us photo identification if requested </li>
                           </ul>
 
-                        </div>', $gamertag, $pass, $games, $shirt);
+                        </div>', $gamertag, $pass, $games, $shirt, $note);
 
         $plainBody = sprintf("Thanks for registering for OHN14! Here are the details of your registration:\n\n
                               Gamertag: %s\n
 	                            Pass type: %s\n
 	                            Games: %s\n
                               Shirt: %s\n
+                              \n\n
+                              Please notify us of any changes to Doubles teams via email at ohnsmash@ozhadou.net.
                               \n\n
                               What to do on entry:\n
                               Show us a copy of this email (printed or on your smartphone)\n
