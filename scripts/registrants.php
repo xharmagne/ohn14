@@ -106,10 +106,6 @@ if ($qryresult = $mysqli->query($query)) {
       }
       if ($row["DIY10"]) {
         $diy10Registered = true;
-
-        if (!empty($row["DIY10_Notes"])) {
-          $diy10Notes = $row["DIY10_Notes"];
-        }
       }
       if ($row["DIY11"]) {
         $diy11Registered = true;

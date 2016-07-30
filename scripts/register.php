@@ -192,7 +192,7 @@ for ($i=0; $i < $count; $i++) {
      $status .= "DIY9";
     }
     if ($registrants[$i]->diy10) {
-     $updatequery .= "update `" . DB_TABLE . "` set `DIY10` = true, `DIY10_Notes` = '$diy10Notes' where `Gamertag` = '$gamertag'; ";
+     $updatequery .= "update `" . DB_TABLE . "` set `DIY10` = true where `Gamertag` = '$gamertag'; ";
      $status .= "DIY10";
     }
     if ($registrants[$i]->diy11) {
