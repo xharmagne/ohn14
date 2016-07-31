@@ -219,6 +219,10 @@ a:hover {
       flex-basis: 33%;
     }
 
+    .info-container.max-2 .info-item {
+      flex-basis: 50%;
+    }
+
     .info-item .info-name {
       	font-size: 1.15rem;
     }
