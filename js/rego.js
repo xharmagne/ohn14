@@ -12,7 +12,7 @@ function RegoController($scope, $http, $anchorScroll, $window) {
     that.scope.currentRegistrantForS4 = null;
     that.scope.currentRegistrantForDIY10 = null;
 
-    that.passTypes = [{ type: "Competitor", description: "Competitor pass", price: 50 },
+    that.passTypes = [{ type: "Competitor", description: "Competitor pass", price: 60 },
                       { type: "Spectator", description: "Spectator pass", price: 10 },
                       { type: "AddGames", description: "Add games to existing pass", price: 0 }];
 
