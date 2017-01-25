@@ -25,6 +25,8 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
         $email = $row["Email"];
         $games = "";
         $shirt = "N/A";
+        $note  = "";
+        $urgentNote = "";
 
         $result.=$gamertag;
 
@@ -53,6 +55,7 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
           }
 
          $games .= "SSBM Doubles".$partnera." | ";
+         $note = "Please notify us of any changes to Doubles teams via email at <a href=\"mailto:ohnsmash@ozhadou.net\">ohnsmash@ozhadou.net</a><br/>";
         }
        if ($row["S3"]) {
         $games .= "SSB4 Singles | ";
@@ -64,6 +67,7 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
          }
 
         $games .= "SSB4 Doubles".$partnerb." | ";
+        $note = "Please notify us of any changes to Doubles teams via email at <a href=\"mailto:ohnsmash@ozhadou.net\">ohnsmash@ozhadou.net</a><br/>";
        }
 
        if ($row["DIY1"]) {
@@ -121,6 +125,15 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
           $games = "N/A";
         }
 
+        if ($gamertag == "Cakecow" ||
+        $gamertag == "Jalen Rose" ||
+        $gamertag == "Iamnotagamer" ||
+        $gamertag == "Somebody") {
+          $urgentNote = "You currently have an outstanding balance of <span style=\"font-size: 1.5em;\">$10</span>.<br>Please pay at the check-in desk when you collect your pass.";
+        }
+
+        //$urgentNote = "Your gamertag has been censored. Please present this updated email to collect your pass.";
+
         $body = sprintf('<div style="width:600px;margin:0 auto">
                           <img src="http://ohn.ozhadou.net/img/banner.jpg" alt="OHN14" style="width:auto;max-height:170px" />
 
@@ -139,6 +152,10 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
                           %s
 
+                          <p style="font-family:Roboto, Verdana;font-weight: bold;color: #cc3333;font-size: 1.15em;">
+                          %s
+                          </p>
+
                           <p style="font-family:Roboto, Verdana;">What to do on entry:</p>
 
                           <ul style="font-family:Roboto, Verdana;">
@@ -146,7 +163,7 @@ $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                             <li style="font-family:Roboto, Verdana;">Show us photo identification if requested </li>
                           </ul>
 
-                        </div>', $gamertag, $pass, $games, $shirt, $note);
+                        </div>', $gamertag, $pass, $games, $shirt, $note, $urgentNote);
 
         $plainBody = sprintf("Thanks for registering for OHN14! Here are the details of your registration:\n\n
                               Gamertag: %s\n

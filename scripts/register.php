@@ -1,6 +1,10 @@
 ﻿<?php
 require_once('./rconfig.php');
 
+//header('HTTP/1.1 500 Internal Server Error');
+//exit();
+
+
 error_log("Registerdata:".file_get_contents("php://input"));
 
 $data = json_decode(file_get_contents("php://input"));
